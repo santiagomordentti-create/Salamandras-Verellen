@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Salamandras Verellen · Taller de hierro en Tandil desde 1987</title>
+<meta name="description" content="Salamandras, hogares, hornos y parrillas a leña. Taller propio en Tandil desde 1987. Pedí precio por WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600&amp;family=Barlow:wght@400;500&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#ece8e0;color:#1c1a18;font-family:'Barlow',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:#8e3b26}
+a:hover{color:#1c1a18}
+:focus-visible{outline:2px solid #8e3b26;outline-offset:3px}
+@keyframes kenburns{from{transform:scale(1) translate(0,0)}to{transform:scale(1.09) translate(-1.2%,-0.8%)}}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</helmet>
+
+<header data-screen-label="01 Hero" style="position:relative;min-height:100svh;display:flex;flex-direction:column;overflow:hidden;background:#1c1a18;color:#ece8e0">
+  <div style="position:absolute;inset:0;overflow:hidden">
+    <img ref="{{ heroRef }}" src="uploads/hero-photo-mobile.jpg" alt="Salamandra de hierro encendida, con el fuego visible tras el vidrio, en un ambiente de campo con piso de piedra." style="width:100%;height:100%;object-fit:cover;object-position:{{ heroPos }};transform-origin:30% 60%;animation:{{ kbAnim }};will-change:transform;display:block">
+  </div>
+  <div style="position:absolute;inset:0;background:rgba(28,26,24,{{ overlay }})"></div>
+
+  <div style="position:relative;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px clamp(20px,5vw,64px);border-bottom:1px solid rgba(236,232,224,0.18)">
+    <a href="#" style="display:flex;flex-direction:column;gap:2px;text-decoration:none;color:#ece8e0">
+      <span style="font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:26px;letter-spacing:0.06em;text-transform:uppercase;line-height:1">Verellen</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#cfc8bc">Salamandras · Tandil</span>
+    </a>
+    <a href="https://wa.me/5492494595007" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;min-height:44px;padding:0 16px;border:1px solid rgba(236,232,224,0.5);color:#ece8e0;text-decoration:none;font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.06em;text-transform:uppercase" style-hover="background:#ece8e0;color:#1c1a18">WhatsApp</a>
+  </div>
+
+  <div style="position:relative;flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:clamp(32px,6vh,64px);padding:clamp(48px,10vh,120px) clamp(20px,5vw,64px) clamp(28px,5vh,56px);max-width:1440px;width:100%;margin:0 auto">
+    <div style="display:flex;flex-direction:column;gap:20px;max-width:980px">
+      <span data-rv="fade" data-rv-delay="0" style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#cfc8bc">Salamandras · Hogares · Hornos · Parrillas a leña</span>
+      <h1 data-rv="fade" data-rv-delay="120" style="margin:0;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:clamp(46px,8.4vw,112px);line-height:0.94;letter-spacing:-0.005em;text-wrap:balance">El calor de la leña, en hierro hecho en Tandil.</h1>
+      <p data-rv="fade" data-rv-delay="320" style="margin:0;font-size:clamp(18px,2vw,22px);font-weight:500;color:#e2ddd3">Taller propio desde 1987.</p>
+    </div>
+
+    <nav aria-label="Líneas de producto" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:1px;background:rgba(236,232,224,0.22);border:1px solid rgba(236,232,224,0.22)">
+      <a href="#calefaccion" data-rv="up" data-rv-delay="520" style="display:flex;flex-direction:column;gap:6px;min-height:84px;padding:16px 18px;background:rgba(28,26,24,0.72);color:#ece8e0;text-decoration:none" style-hover="background:#8e3b26;color:#ece8e0">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;color:#cfc8bc">L-01</span>
+        <span style="font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:24px;line-height:1.05">Calefacción</span>
+      </a>
+      <a href="#cocina" data-rv="up" data-rv-delay="600" style="display:flex;flex-direction:column;gap:6px;min-height:84px;padding:16px 18px;background:rgba(28,26,24,0.72);color:#ece8e0;text-decoration:none" style-hover="background:#8e3b26;color:#ece8e0">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;color:#cfc8bc">L-02</span>
+        <span style="font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:24px;line-height:1.05">Cocina y horno</span>
+      </a>
+      <a href="#parrilla" data-rv="up" data-rv-delay="680" style="display:flex;flex-direction:column;gap:6px;min-height:84px;padding:16px 18px;background:rgba(28,26,24,0.72);color:#ece8e0;text-decoration:none" style-hover="background:#8e3b26;color:#ece8e0">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;color:#cfc8bc">L-03</span>
+        <span style="font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:24px;line-height:1.05">Parrilla y exterior</span>
+      </a>
+      <a href="#hogares" data-rv="up" data-rv-delay="760" style="display:flex;flex-direction:column;gap:6px;min-height:84px;padding:16px 18px;background:rgba(28,26,24,0.72);color:#ece8e0;text-decoration:none" style-hover="background:#8e3b26;color:#ece8e0">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;color:#cfc8bc">L-04</span>
+        <span style="font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:24px;line-height:1.05">Hogares a medida</span>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section id="lineas" data-screen-label="02 Qué fabricamos" style="padding:clamp(64px,10vw,128px) clamp(20px,5vw,64px);max-width:1440px;margin:0 auto">
+  <div data-rv="up" style="display:flex;flex-direction:column;gap:14px;margin-bottom:clamp(32px,5vw,56px);max-width:760px">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#8e3b26">02 / Qué fabricamos</span>
+    <h2 style="margin:0;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:clamp(38px,5.4vw,68px);line-height:0.98;text-wrap:balance">Cuatro líneas. Elegí la tuya y consultá.</h2>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(16px,2vw,24px)">
+
+    <article id="calefaccion" data-rv="up" data-rv-delay="0" style="position:relative;display:flex;flex-direction:column;background:#e2ddd3;border:2px solid #1c1a18;scroll-margin-top:24px;transition:border-color 200ms ease" style-hover="border-color:#8e3b26">
+      <span aria-hidden="true" style="position:absolute;top:9px;left:9px;width:9px;height:9px;border-radius:50%;background:#a59e92;border:1px solid #1c1a18;z-index:1"></span>
+      <span aria-hidden="true" style="position:absolute;top:9px;right:9px;width:9px;height:9px;border-radius:50%;background:#a59e92;border:1px solid #1c1a18;z-index:1"></span>
+      <span aria-hidden="true" style="position:absolute;bottom:9px;left:9px;width:9px;height:9px;border-radius:50%;background:#a59e92;border:1px solid #1c1a18"></span>
+      <span aria-hidden="true" style="position:absolute;bottom:9px;right:9px;width:9px;height:9px;border-radius:50%;background:#a59e92;border:1px solid #1c1a18"></span>
+      <div role="img" aria-label="Foto pendiente: línea Calefacción" style="aspect-ratio:4/3;margin:28px 28px 0;background:repeating-linear-gradient(135deg,#2a2723 0 2px,#1c1a18 2px 12px);display:flex;align-items:flex-end;padding:12px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;color:#a59e92">[FOTO PENDIENTE] cat-calefaccion.jpg</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:16px;padding:22px 28px 34px;flex:1">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.12em;color:#4a4540">LÍNEA 01</span>
+        <h3 style="margin:0;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:clamp(32px,3vw,40px);line-height:1">Calefacción</h3>
+        <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;border-top:1px solid #1c1a18;flex:1">
+          <li style="padding:10px 0;border-bottom:1px solid #b5aea2;font-size:17px">Salamandras a leña</li>
+          <li style="padding:10px 0;border-bottom:1px solid #b5aea2;font-size:17px">Salamandras con pulmón</li>
+          <li style="padding:10px 0;border-bottom:1px solid #b5aea2;font-size:17px">Estufas de hierro</li>
+        </ul>
+        <a href="https://wa.me/5492494595007?text=Hola%2C%20quiero%20consultar%20por%20la%20l%C3%ADnea%20Calefacci%C3%B3n." target="_blank" rel="noopener" style="display:flex;align-items:center;min-height:44px;font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;color:#8e3b26">Ver línea →</a>
+      </div>
+    </article>
+
+    <article id="cocina" data-rv="up" data-rv-delay="80" style="position:relative;display:flex;flex-direction:column;background:#e2ddd3;border:2px solid #1c1a18;scroll-margin-top:24px;transition:border-color 200ms ease" style-hover="border-color:#8e3b26">
+      <span aria-hidden="true" style="position:absolute;top:9px;left:9px;width:9px;height:9px;border-radius:50%;background:#a59e92;border:1px solid #1c1a18;z-index:1"></span>
+      <span aria-hidden="true" style="position:absolute;top:9px;right:9px;width:9px;height:9px;border-radius:50%;background:#a59e92;border:1px solid #1c1a18;z-index:1"></span>
+      <span aria-hidden="true" style="position:absolute;bottom:9px;left:9px;width:9px;height:9px;border-radius:50%;background:#a59e92;border:1px solid #1c1a18"></span>
+      <span aria-hidden="true" style="position:absolute;bottom:9px;right:9px;width:9px;height:9px;border-radius:50%;background:#a59e92;border:1px solid #1c1a18"></span>
+      <div role="img" aria-label="Foto pendiente: línea Cocina y horno" style="aspect-ratio:4/3;margin:28px 28px 0;background:repeating-linear-gradient(135deg,#2a2723 0 2px,#1c1a18 2px 12px);display:flex;align-items:flex-end;padding:12px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;color:#a59e92">[FOTO PENDIENTE] cat-cocina-horno.jpg</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:16px;padding:22px 28px 34px;flex:1">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.12em;color:#4a4540">LÍNEA 02</span>
+        <h3 style="margin:0;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:clamp(32px,3vw,40px);line-height:1">Cocina y horno</h3>
+        <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;border-top:1px solid #1c1a18;flex:1">
+          <li style="padding:10px 0;border-bottom:1px solid #b5aea2;font-size:17px">Cocinas a leña</li>
+          <li style="padding:10px 0;border-bottom:1px solid #b5aea2;font-size:17px">Hornos a leña</li>
+          <li style="padding:10px 0;border-bottom:1px solid #b5aea2;font-size:17px">Salamandras con horno</li>
+        </ul>
+        <a href="https://wa.me/5492494595007?text=Hola%2C%20quiero%20consultar%20por%20la%20l%C3%ADnea%20Cocina%20y%20horno." target="_blank" rel="noopener" style="display:flex;align-items:center;min-height:44px;font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;color:#8e3b26">Ver línea →</a>
+      </div>
+    </article>
+
+    <article id="parrilla" data-rv="up" data-rv-delay="160" style="position:relative;display:flex;flex-direction:column;background:#e2ddd3;border:2px solid #1c1a18;scroll-margin-top:24px;transition:border-color 200ms ease" style-hover="border-color:#8e3b26">
+      <span aria-hidden="true" style="position:absolute;top:9px;left:9px;width:9px;height:9px;border-radius:50%;background:#a59e92;border:1px solid #1c1a18;z-index:1"></span>
+      <span aria-hidden="true" style="position:absolute;top:9px;right:9px;width:9px;height:9px;border-radius:50%;background:#a59e92;border:1px solid #1c1a18;z-index:1"></span>
+      <span aria-hidden="true" style="position:absolute;bottom:9px;left:9px;width:9px;height:9px;border-radius:50%;background:#a59e92;border:1px solid #1c1a18"></span>
+      <span aria-hidden="true" style="position:absolute;bottom:9px;right:9px;width:9px;height:9px;border-radius:50%;background:#a59e92;border:1px solid #1c1a18"></span>
+      <div role="img" aria-label="Foto pendiente: línea Parrilla y exterior" style="aspect-ratio:4/3;margin:28px 28px 0;background:repeating-linear-gradient(135deg,#2a2723 0 2px,#1c1a18 2px 12px);display:flex;align-items:flex-end;padding:12px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;color:#a59e92">[FOTO PENDIENTE] cat-parrilla.jpg</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:16px;padding:22px 28px 34px;flex:1">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.12em;color:#4a4540">LÍNEA 03</span>
+        <h3 style="margin:0;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:clamp(32px,3vw,40px);line-height:1">Parrilla y exterior</h3>
+        <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;border-top:1px solid #1c1a18;flex:1">
+          <li style="padding:10px 0;border-bottom:1px solid #b5aea2;font-size:17px">Parrillas</li>
+          <li style="padding:10px 0;border-bottom:1px solid #b5aea2;font-size:17px">Fogoneros</li>
+          <li style="padding:10px 0;border-bottom:1px solid #b5aea2;font-size:17px">Asadores</li>
+        </ul>
+        <a href="https://wa.me/5492494595007?text=Hola%2C%20quiero%20consultar%20por%20la%20l%C3%ADnea%20Parrilla%20y%20exterior." target="_blank" rel="noopener" style="display:flex;align-items:center;min-height:44px;font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;color:#8e3b26">Ver línea →</a>
+      </div>
+    </article>
+
+    <article id="hogares" data-rv="up" data-rv-delay="240" style="position:relative;display:flex;flex-direction:column;background:#e2ddd3;border:2px solid #1c1a18;scroll-margin-top:24px;transition:border-color 200ms ease" style-hover="border-color:#8e3b26">
+      <span aria-hidden="true" style="position:absolute;top:9px;left:9px;width:9px;height:9px;border-radius:50%;background:#a59e92;border:1px solid #1c1a18;z-index:1"></span>
+      <span aria-hidden="true" style="position:absolute;top:9px;right:9px;width:9px;height:9px;border-radius:50%;background:#a59e92;border:1px solid #1c1a18;z-index:1"></span>
+      <span aria-hidden="true" style="position:absolute;bottom:9px;left:9px;width:9px;height:9px;border-radius:50%;background:#a59e92;border:1px solid #1c1a18"></span>
+      <span aria-hidden="true" style="position:absolute;bottom:9px;right:9px;width:9px;height:9px;border-radius:50%;background:#a59e92;border:1px solid #1c1a18"></span>
+      <div role="img" aria-label="Foto pendiente: línea Hogares a medida" style="aspect-ratio:4/3;margin:28px 28px 0;background:repeating-linear-gradient(135deg,#2a2723 0 2px,#1c1a18 2px 12px);display:flex;align-items:flex-end;padding:12px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;color:#a59e92">[FOTO PENDIENTE] cat-hogares.jpg</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:16px;padding:22px 28px 34px;flex:1">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.12em;color:#4a4540">LÍNEA 04</span>
+        <h3 style="margin:0;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:clamp(32px,3vw,40px);line-height:1">Hogares a medida</h3>
+        <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;border-top:1px solid #1c1a18;flex:1">
+          <li style="padding:10px 0;border-bottom:1px solid #b5aea2;font-size:17px">Hogares empotrables</li>
+          <li style="padding:10px 0;border-bottom:1px solid #b5aea2;font-size:17px">Insertos para hogar existente</li>
+          <li style="padding:10px 0;border-bottom:1px solid #b5aea2;font-size:17px">Frentes y medidas especiales</li>
+        </ul>
+        <a href="https://wa.me/5492494595007?text=Hola%2C%20quiero%20consultar%20por%20la%20l%C3%ADnea%20Hogares%20a%20medida." target="_blank" rel="noopener" style="display:flex;align-items:center;min-height:44px;font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;color:#8e3b26">Ver línea →</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="taller" data-screen-label="03 El taller" style="background:#1c1a18;color:#ece8e0">
+  <div style="padding:clamp(64px,10vw,128px) clamp(20px,5vw,64px);max-width:1440px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(32px,5vw,56px)">
+    <div data-rv="fade" style="display:flex;flex-direction:column;gap:14px;max-width:820px">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#d08a72">03 / El taller</span>
+      <h2 style="margin:0;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:clamp(38px,5.4vw,68px);line-height:0.98;text-wrap:balance">Un taller, de la chapa al equipo terminado.</h2>
+      <p style="margin:0;font-size:clamp(18px,1.8vw,21px);color:#cfc8bc">Fabricación propia desde 1987, sin intermediarios.</p>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:clamp(12px,1.5vw,20px)">
+      <div data-rv="fade" data-rv-delay="0" role="img" aria-label="Foto pendiente: vista general del taller" style="flex:2 1 460px;min-height:clamp(280px,42vw,560px);background:repeating-linear-gradient(135deg,#2a2723 0 2px,#151311 2px 12px);border:1px solid #3a3631;display:flex;align-items:flex-end;padding:16px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;color:#a59e92">[FOTO PENDIENTE] taller-general.jpg</span>
+      </div>
+      <div style="flex:1 1 280px;display:flex;flex-direction:column;gap:clamp(12px,1.5vw,20px)">
+        <div data-rv="fade" data-rv-delay="140" role="img" aria-label="Foto pendiente: soldadura en el taller" style="flex:1;min-height:220px;background:repeating-linear-gradient(135deg,#2a2723 0 2px,#151311 2px 12px);border:1px solid #3a3631;display:flex;align-items:flex-end;padding:16px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;color:#a59e92">[FOTO PENDIENTE] taller-soldadura.jpg</span>
+        </div>
+        <div data-rv="fade" data-rv-delay="280" role="img" aria-label="Foto pendiente: terminación de un equipo" style="flex:1;min-height:220px;background:repeating-linear-gradient(135deg,#2a2723 0 2px,#151311 2px 12px);border:1px solid #3a3631;display:flex;align-items:flex-end;padding:16px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;color:#a59e92">[FOTO PENDIENTE] taller-terminacion.jpg</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="como-funciona" data-screen-label="04 Cómo funciona" style="padding:clamp(64px,10vw,128px) clamp(20px,5vw,64px);max-width:1440px;margin:0 auto">
+  <div data-rv="up" style="display:flex;flex-direction:column;gap:14px;margin-bottom:clamp(32px,5vw,64px);max-width:760px">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#8e3b26">04 / Cómo funciona</span>
+    <h2 style="margin:0;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:clamp(38px,5.4vw,68px);line-height:0.98;text-wrap:balance">El pulmón: calor seco y estable.</h2>
+  </div>
+
+  <div style="display:flex;flex-wrap:wrap;align-items:center;gap:clamp(28px,3vw,40px)">
+    <div style="flex:1 1 260px;display:flex;flex-direction:column;gap:clamp(32px,5vw,72px)">
+      <div data-rv="fade" data-rv-delay="0" style="display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;align-items:center;gap:12px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:15px;font-weight:500;color:#8e3b26">01</span>
+          <span data-rv="line" data-rv-delay="200" style="flex:1;height:1px;background:#1c1a18;transform-origin:left center"></span>
+          <span aria-hidden="true" style="width:7px;height:7px;background:#1c1a18"></span>
+        </div>
+        <h3 style="margin:0;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:30px;line-height:1.05">Entra aire frío</h3>
+        <p style="margin:0;font-size:17px;line-height:1.5;color:#4a4540;text-wrap:pretty">El aire del ambiente entra por la base del equipo, separado de la cámara de fuego.</p>
+      </div>
+      <div data-rv="fade" data-rv-delay="200" style="display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;align-items:center;gap:12px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:15px;font-weight:500;color:#8e3b26">02</span>
+          <span data-rv="line" data-rv-delay="400" style="flex:1;height:1px;background:#1c1a18;transform-origin:left center"></span>
+          <span aria-hidden="true" style="width:7px;height:7px;background:#1c1a18"></span>
+        </div>
+        <h3 style="margin:0;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:30px;line-height:1.05">Se calienta en el pulmón</h3>
+        <p style="margin:0;font-size:17px;line-height:1.5;color:#4a4540;text-wrap:pretty">Sube por la doble pared que rodea el fuego. Toma temperatura del hierro, sin contacto con el humo.</p>
+      </div>
+    </div>
+
+    <figure data-rv="fade" data-rv-delay="100" style="flex:1.5 1 340px;margin:0;border:1px solid #1c1a18;background-color:#e6e1d8;background-image:linear-gradient(rgba(28,26,24,0.09) 1px,transparent 1px),linear-gradient(90deg,rgba(28,26,24,0.09) 1px,transparent 1px),linear-gradient(rgba(28,26,24,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(28,26,24,0.04) 1px,transparent 1px);background-size:60px 60px,60px 60px,12px 12px,12px 12px">
+      <svg viewBox="0 0 400 440" role="img" aria-label="Esquema en corte de una salamandra con pulmón: el aire frío entra por abajo, sube por la doble pared que rodea la cámara de fuego y sale caliente por arriba; el humo sale por el caño." style="display:block;width:100%;height:auto">
+        <defs>
+          <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#1c1a18"></path></marker>
+          <marker id="ahr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#8e3b26"></path></marker>
+          <pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#1c1a18" stroke-width="0.8" opacity="0.35"></line></pattern>
+        </defs>
+        <rect x="262" y="20" width="34" height="88" fill="#e6e1d8" stroke="#1c1a18" stroke-width="2"></rect>
+        <path d="M279 100 C 272 80, 290 64, 279 40" fill="none" stroke="#1c1a18" stroke-width="1.2" stroke-dasharray="3 4"></path>
+        <rect x="90" y="108" width="230" height="250" fill="url(#hatch)" stroke="#1c1a18" stroke-width="2.5"></rect>
+        <rect x="118" y="160" width="174" height="170" fill="#e6e1d8" stroke="#1c1a18" stroke-width="2"></rect>
+        <rect x="138" y="196" width="134" height="106" fill="none" stroke="#1c1a18" stroke-width="1" stroke-dasharray="4 3"></rect>
+        <path d="M168 300 L176 262 L186 284 L198 240 L210 280 L222 254 L234 300" fill="none" stroke="#8e3b26" stroke-width="2"></path>
+        <line x1="150" y1="304" x2="260" y2="304" stroke="#1c1a18" stroke-width="3"></line>
+        <line x1="104" y1="358" x2="104" y2="400" stroke="#1c1a18" stroke-width="3"></line>
+        <line x1="306" y1="358" x2="306" y2="400" stroke="#1c1a18" stroke-width="3"></line>
+        <line x1="70" y1="400" x2="340" y2="400" stroke="#1c1a18" stroke-width="1"></line>
+        <path d="M30 346 L104 346" fill="none" stroke="#1c1a18" stroke-width="1.6" marker-end="url(#ah)"></path>
+        <path d="M104 340 L104 136 L150 136" fill="none" stroke="#8e3b26" stroke-width="1.6" stroke-dasharray="5 4"></path>
+        <path d="M306 300 L306 136 L270 136" fill="none" stroke="#8e3b26" stroke-width="1.6" stroke-dasharray="5 4"></path>
+        <path d="M205 130 L205 72" fill="none" stroke="#8e3b26" stroke-width="2" marker-end="url(#ahr)"></path>
+        <path d="M180 130 L160 80" fill="none" stroke="#8e3b26" stroke-width="2" marker-end="url(#ahr)"></path>
+        <path d="M230 130 L248 92" fill="none" stroke="#8e3b26" stroke-width="2" marker-end="url(#ahr)"></path>
+        <g font-family="IBM Plex Mono, monospace" font-size="11" fill="#1c1a18">
+          <text x="30" y="336">01 AIRE FRÍO</text>
+          <text x="150" y="150">02 PULMÓN</text>
+          <text x="40" y="60">03 SALIDA DE CALOR</text>
+          <text x="304" y="40">HUMO</text>
+          <text x="180" y="186">CÁMARA DE FUEGO</text>
+        </g>
+        <g font-family="IBM Plex Mono, monospace" font-size="9" fill="#4a4540">
+          <line x1="230" y1="414" x2="392" y2="414" stroke="#1c1a18" stroke-width="1"></line>
+          <text x="232" y="428">ESQ. 01 · CORTE · S/ESC.</text>
+        </g>
+      </svg>
+      <figcaption style="padding:10px 14px;border-top:1px solid #1c1a18;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.06em;color:#4a4540">Salamandra con pulmón — corte esquemático</figcaption>
+    </figure>
+
+    <div style="flex:1 1 260px;display:flex;flex-direction:column">
+      <div data-rv="fade" data-rv-delay="400" style="display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;align-items:center;gap:12px">
+          <span aria-hidden="true" style="width:7px;height:7px;background:#1c1a18"></span>
+          <span data-rv="line" data-rv-delay="600" style="flex:1;height:1px;background:#1c1a18;transform-origin:right center"></span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:15px;font-weight:500;color:#8e3b26">03</span>
+        </div>
+        <h3 style="margin:0;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:30px;line-height:1.05">Sale calor seco y estable</h3>
+        <p style="margin:0;font-size:17px;line-height:1.5;color:#4a4540;text-wrap:pretty">El aire caliente sale por arriba y circula por el ambiente. El humo va por el caño, por separado.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contacto" data-screen-label="05 Contacto" style="background:#e2ddd3;border-top:2px solid #1c1a18">
+  <div style="padding:clamp(64px,10vw,128px) clamp(20px,5vw,64px);max-width:1440px;margin:0 auto;display:flex;flex-wrap:wrap;gap:clamp(32px,5vw,72px)">
+    <div style="flex:1 1 360px;display:flex;flex-direction:column;gap:28px">
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#8e3b26">05 / Contacto</span>
+        <h2 style="margin:0;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:clamp(42px,6vw,76px);line-height:0.96;text-wrap:balance">Pedí precio por WhatsApp.</h2>
+        <p style="margin:0;font-size:18px;color:#4a4540;text-wrap:pretty">Contanos qué equipo buscás y el tamaño del ambiente. Te respondemos desde el taller.</p>
+      </div>
+
+      <a href="https://wa.me/5492494595007?text=Hola%2C%20quiero%20pedir%20precio." target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:80px;padding:18px 24px;background:#8e3b26;color:#ece8e0;text-decoration:none;border:2px solid #8e3b26" style-hover="background:#1c1a18;border-color:#1c1a18;color:#ece8e0">
+        <span style="display:flex;flex-direction:column;gap:4px">
+          <span style="font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:clamp(26px,3vw,34px);line-height:1">Escribir por WhatsApp</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;letter-spacing:0.04em">(0249) 15-4595007</span>
+        </span>
+        <span aria-hidden="true" style="font-family:'IBM Plex Mono',monospace;font-size:28px">→</span>
+      </a>
+
+      <dl style="margin:0;display:flex;flex-direction:column;border-top:1px solid #1c1a18">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;padding:14px 0;border-bottom:1px solid #1c1a18">
+          <dt style="flex:0 0 96px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#4a4540">Teléfono</dt>
+          <dd style="margin:0;flex:1 1 180px;font-size:18px;font-weight:500"><a href="tel:+5492494595007" style="color:#1c1a18;text-decoration:none">(0249) 15-4595007</a></dd>
+          <button type="button" onClick="{{ copyTel }}" aria-label="Copiar teléfono" style="min-height:44px;min-width:96px;padding:0 14px;background:transparent;border:1px solid #1c1a18;color:#1c1a18;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer" style-hover="background:#1c1a18;color:#ece8e0">{{ telLabel }}</button>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;padding:14px 0;border-bottom:1px solid #1c1a18">
+          <dt style="flex:0 0 96px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#4a4540">Mail</dt>
+          <dd style="margin:0;flex:1 1 180px;font-size:18px;font-weight:500">[MAIL: a confirmar]</dd>
+          <button type="button" onClick="{{ copyMail }}" aria-label="Copiar mail" style="min-height:44px;min-width:96px;padding:0 14px;background:transparent;border:1px solid #1c1a18;color:#1c1a18;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer" style-hover="background:#1c1a18;color:#ece8e0">{{ mailLabel }}</button>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;padding:14px 0;border-bottom:1px solid #1c1a18">
+          <dt style="flex:0 0 96px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#4a4540">Dirección</dt>
+          <dd style="margin:0;flex:1 1 180px;font-size:18px;font-weight:500">Colectora Pugliese 51, Tandil, Buenos Aires</dd>
+          <button type="button" onClick="{{ copyDir }}" aria-label="Copiar dirección" style="min-height:44px;min-width:96px;padding:0 14px;background:transparent;border:1px solid #1c1a18;color:#1c1a18;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer" style-hover="background:#1c1a18;color:#ece8e0">{{ dirLabel }}</button>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;padding:14px 0;border-bottom:1px solid #1c1a18">
+          <dt style="flex:0 0 96px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#4a4540">Horario</dt>
+          <dd style="margin:0;flex:1 1 180px;font-size:18px;font-weight:500">[HORARIO: a confirmar]</dd>
+        </div>
+      </dl>
+      <span aria-live="polite" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">{{ liveMsg }}</span>
+    </div>
+
+    <div style="flex:1 1 360px;display:flex;flex-direction:column;border:2px solid #1c1a18;min-height:380px">
+      <iframe title="Mapa: Colectora Pugliese 51, Tandil" src="https://www.google.com/maps?q=Colectora%20Pugliese%2051%2C%20Tandil%2C%20Buenos%20Aires%2C%20Argentina&amp;z=15&amp;output=embed" loading="lazy" style="flex:1;width:100%;min-height:340px;border:0;display:block;filter:grayscale(1) contrast(1.05)"></iframe>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=Colectora%20Pugliese%2051%2C%20Tandil" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:space-between;min-height:48px;padding:0 16px;border-top:2px solid #1c1a18;font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;color:#1c1a18" style-hover="background:#1c1a18;color:#ece8e0">Cómo llegar <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer style="background:#1c1a18;color:#ece8e0;padding:40px clamp(20px,5vw,64px)">
+  <div style="max-width:1440px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px">
+    <div style="display:flex;flex-direction:column;gap:6px">
+      <span style="font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:clamp(40px,6vw,72px);letter-spacing:0.04em;text-transform:uppercase;line-height:0.9">Verellen</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:#cfc8bc">Salamandras · Tandil · desde 1987</span>
+    </div>
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.06em;color:#cfc8bc">[DOMINIO: a confirmar]</span>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;overlay&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:0.62,&quot;min&quot;:0.55,&quot;max&quot;:0.7,&quot;step&quot;:0.01,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Hero&quot;},&quot;kenBurns&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Hero&quot;}}">
+class Component extends DCLogic {
+  state = {
+    wide: typeof window !== 'undefined' && window.matchMedia ? window.matchMedia('(min-width: 768px)').matches : true,
+    copied: null
+  };
+  heroRef = React.createRef();
+  syncHero() {
+    const img = this.heroRef.current;
+    if (!img) return;
+    const want = this.state.wide ? 'uploads/hero-photo.jpg' : 'uploads/hero-photo-mobile.jpg';
+    if (img.getAttribute('src') !== want) img.setAttribute('src', want);
+  }
+  componentDidUpdate() { this.syncHero(); }
+  componentDidMount() {
+    this.syncHero();
+    this.mq = window.matchMedia('(min-width: 768px)');
+    this.onMq = (e) => this.setState({ wide: e.matches });
+    this.mq.addEventListener ? this.mq.addEventListener('change', this.onMq) : this.mq.addListener(this.onMq);
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce || !('IntersectionObserver' in window)) return;
+    const els = Array.from(document.querySelectorAll('[data-rv]'));
+    els.forEach((el) => {
+      const k = el.dataset.rv, d = +(el.dataset.rvDelay || 0);
+      if (k === 'line') {
+        el.style.transition = `transform 900ms cubic-bezier(.2,.7,.2,1) ${d}ms`;
+        el.style.transform = 'scaleX(0)';
+      } else {
+        el.style.transition = `opacity 800ms ease ${d}ms, transform 800ms cubic-bezier(.2,.7,.2,1) ${d}ms`;
+        el.style.opacity = '0';
+        if (k === 'up') el.style.transform = 'translateY(20px)';
+      }
+    });
+    this.io = new IntersectionObserver((entries) => entries.forEach((e) => {
+      if (!e.isIntersecting) return;
+      const el = e.target;
+      if (el.dataset.rv === 'line') el.style.transform = 'scaleX(1)';
+      else { el.style.opacity = '1'; el.style.transform = 'none'; }
+      this.io.unobserve(el);
+    }), { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    requestAnimationFrame(() => els.forEach((el) => this.io.observe(el)));
+  }
+  componentWillUnmount() {
+    if (this.io) this.io.disconnect();
+    if (this.mq) this.mq.removeEventListener ? this.mq.removeEventListener('change', this.onMq) : this.mq.removeListener(this.onMq);
+    clearTimeout(this.t);
+  }
+  copy(key, text) {
+    const done = () => {
+      this.setState({ copied: key });
+      clearTimeout(this.t);
+      this.t = setTimeout(() => this.setState({ copied: null }), 1800);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, done);
+    else {
+      const ta = document.createElement('textarea'); ta.value = text; document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); } catch (e) {}
+      ta.remove(); done();
+    }
+  }
+  renderVals() {
+    const c = this.state.copied;
+    const kb = this.props.kenBurns ?? true;
+    const lbl = (k) => (c === k ? 'Copiado ✓' : 'Copiar');
+    return {
+      heroRef: this.heroRef,
+      heroPos: this.state.wide ? '30% 55%' : '50% 60%',
+      kbAnim: kb ? 'kenburns 18s ease-in-out infinite alternate' : 'none',
+      overlay: this.props.overlay ?? 0.62,
+      telLabel: lbl('tel'), mailLabel: lbl('mail'), dirLabel: lbl('dir'),
+      liveMsg: c ? 'Copiado al portapapeles' : '',
+      copyTel: () => this.copy('tel', '(0249) 15-4595007'),
+      copyMail: () => this.copy('mail', '[MAIL: a confirmar]'),
+      copyDir: () => this.copy('dir', 'Colectora Pugliese 51, Tandil, Buenos Aires')
+    };
+  }
+}
+</script>
+</body>
+</html>
