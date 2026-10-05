@@ -27,7 +27,7 @@ a:hover{color:#1c1a18}
 
 <header data-screen-label="01 Hero" style="position:relative;min-height:100svh;display:flex;flex-direction:column;overflow:hidden;background:#1c1a18;color:#ece8e0">
   <div style="position:absolute;inset:0;overflow:hidden">
-    <img ref="{{ heroRef }}" src="uploads/hero-photo-mobile.jpg" alt="Salamandra de hierro encendida, con el fuego visible tras el vidrio, en un ambiente de campo con piso de piedra." style="width:100%;height:100%;object-fit:cover;object-position:{{ heroPos }};transform-origin:30% 60%;animation:{{ kbAnim }};will-change:transform;display:block">
+    <img ref="{{ heroRef }}" src="hero-photo-mobile.jpg" alt="Salamandra de hierro encendida, con el fuego visible tras el vidrio, en un ambiente de campo con piso de piedra." style="width:100%;height:100%;object-fit:cover;object-position:{{ heroPos }};transform-origin:30% 60%;animation:{{ kbAnim }};will-change:transform;display:block">
   </div>
   <div style="position:absolute;inset:0;background:rgba(28,26,24,{{ overlay }})"></div>
 
@@ -330,7 +330,7 @@ class Component extends DCLogic {
   syncHero() {
     const img = this.heroRef.current;
     if (!img) return;
-    const want = this.state.wide ? 'uploads/hero-photo.jpg' : 'uploads/hero-photo-mobile.jpg';
+    const want = this.state.wide ? 'hero-photo.jpg' : 'hero-photo-mobile.jpg';
     if (img.getAttribute('src') !== want) img.setAttribute('src', want);
   }
   componentDidUpdate() { this.syncHero(); }
