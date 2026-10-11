@@ -138,7 +138,7 @@ a:hover{color:#1c1a18}
 </div>
 </section>
 
-<section id="vista-calefaccion" data-vista-linea hidden style="padding:clamp(48px,8vw,96px) clamp(20px,5vw,64px) clamp(64px,10vw,128px);max-width:1440px;margin:0 auto">
+<section id="vista-calefaccion" data-vista-linea style="display:none;padding:clamp(48px,8vw,96px) clamp(20px,5vw,64px) clamp(64px,10vw,128px);max-width:1440px;margin:0 auto">
 <button type="button" data-volver-lineas style="display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0;margin-bottom:28px;background:transparent;border:0;color:#8e3b26;font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;cursor:pointer" style-hover="color:#1c1a18">← Volver a las líneas</button>
 <div style="display:flex;flex-direction:column;gap:14px;margin-bottom:clamp(28px,4vw,40px);max-width:760px">
 <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#8e3b26">LÍNEA 01</span>
@@ -205,7 +205,7 @@ a:hover{color:#1c1a18}
 </div>
 </section>
 
-<section id="vista-cocina" data-vista-linea hidden style="padding:clamp(48px,8vw,96px) clamp(20px,5vw,64px) clamp(64px,10vw,128px);max-width:1440px;margin:0 auto">
+<section id="vista-cocina" data-vista-linea style="display:none;padding:clamp(48px,8vw,96px) clamp(20px,5vw,64px) clamp(64px,10vw,128px);max-width:1440px;margin:0 auto">
 <button type="button" data-volver-lineas style="display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0;margin-bottom:28px;background:transparent;border:0;color:#8e3b26;font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;cursor:pointer" style-hover="color:#1c1a18">← Volver a las líneas</button>
 <div style="display:flex;flex-direction:column;gap:14px;margin-bottom:clamp(28px,4vw,40px);max-width:760px">
 <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#8e3b26">LÍNEA 02</span>
@@ -252,7 +252,7 @@ a:hover{color:#1c1a18}
 </div>
 </section>
 
-<section id="vista-parrilla" data-vista-linea hidden style="padding:clamp(48px,8vw,96px) clamp(20px,5vw,64px) clamp(64px,10vw,128px);max-width:1440px;margin:0 auto">
+<section id="vista-parrilla" data-vista-linea style="display:none;padding:clamp(48px,8vw,96px) clamp(20px,5vw,64px) clamp(64px,10vw,128px);max-width:1440px;margin:0 auto">
 <button type="button" data-volver-lineas style="display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0;margin-bottom:28px;background:transparent;border:0;color:#8e3b26;font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;cursor:pointer" style-hover="color:#1c1a18">← Volver a las líneas</button>
 <div style="display:flex;flex-direction:column;gap:14px;margin-bottom:clamp(28px,4vw,40px);max-width:760px">
 <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#8e3b26">LÍNEA 03</span>
@@ -287,7 +287,7 @@ a:hover{color:#1c1a18}
 </div>
 </section>
 
-<section id="vista-hogares" data-vista-linea hidden style="padding:clamp(48px,8vw,96px) clamp(20px,5vw,64px) clamp(64px,10vw,128px);max-width:1440px;margin:0 auto">
+<section id="vista-hogares" data-vista-linea style="display:none;padding:clamp(48px,8vw,96px) clamp(20px,5vw,64px) clamp(64px,10vw,128px);max-width:1440px;margin:0 auto">
 <button type="button" data-volver-lineas style="display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0;margin-bottom:28px;background:transparent;border:0;color:#8e3b26;font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;cursor:pointer" style-hover="color:#1c1a18">← Volver a las líneas</button>
 <div style="display:flex;flex-direction:column;gap:14px;margin-bottom:clamp(28px,4vw,40px);max-width:760px">
 <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#8e3b26">LÍNEA 04</span>
@@ -580,30 +580,27 @@ copyDir: () => this.copy('dir', 'Colectora Pugliese 51, Tandil, Buenos Aires')
 </script>
 <script>
 (function () {
-  function init() {
+  document.addEventListener('click', function (ev) {
+    if (!ev.target.closest) return;
     var lineas = document.getElementById('lineas');
-    document.querySelectorAll('[data-abrir-linea]').forEach(function (link) {
-      link.addEventListener('click', function (ev) {
-        ev.preventDefault();
-        var id = link.getAttribute('data-abrir-linea');
-        var vista = document.getElementById('vista-' + id);
-        if (!vista) return;
-        document.querySelectorAll('[data-vista-linea]').forEach(function (v) { v.hidden = true; });
-        if (lineas) lineas.hidden = true;
-        vista.hidden = false;
-        if (vista.scrollIntoView) vista.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      });
-    });
-    document.querySelectorAll('[data-volver-lineas]').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        document.querySelectorAll('[data-vista-linea]').forEach(function (v) { v.hidden = true; });
-        if (lineas) lineas.hidden = false;
-        if (lineas && lineas.scrollIntoView) lineas.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      });
-    });
-  }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
-  else init();
+    var link = ev.target.closest('[data-abrir-linea]');
+    if (link) {
+      ev.preventDefault();
+      var id = link.getAttribute('data-abrir-linea');
+      var vista = document.getElementById('vista-' + id);
+      if (!vista) return;
+      document.querySelectorAll('[data-vista-linea]').forEach(function (v) { v.style.display = 'none'; });
+      if (lineas) lineas.style.display = 'none';
+      vista.style.display = '';
+      if (vista.scrollIntoView) vista.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      return;
+    }
+    if (ev.target.closest('[data-volver-lineas]')) {
+      document.querySelectorAll('[data-vista-linea]').forEach(function (v) { v.style.display = 'none'; });
+      if (lineas) lineas.style.display = '';
+      if (lineas && lineas.scrollIntoView) lineas.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
 })();
 </script>
 </body>
