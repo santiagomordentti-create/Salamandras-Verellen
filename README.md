@@ -8,8 +8,8 @@ Estos textos están marcados entre corchetes en el HTML:
 
 - [ ] Provoleteras: modelos y medidas
 - [ ] Discos: modelos y medidas
-- [ ] Confirmar la zona de instalación y envíos (sección Instalación)
 - [ ] Foto del taller o de la familia Verellen (sección Nosotros)
 - [ ] Días y horarios de atención (sección Contacto)
+- [ ] Formas de pago (sección Contacto)
 
 También faltan las fotos de producto: cada placeholder `FOTO · ...` dice cuál va.
