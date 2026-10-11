@@ -75,6 +75,9 @@ p{margin:0}
 
 /* Secciones */
 section{padding-block:clamp(72px,10vw,128px)}
+.titulo{display:grid;gap:10px}
+.titulo h2{font-size:clamp(56px,8vw,104px);color:var(--brasa)}
+.subtitulo{font-family:var(--display);font-weight:800;font-size:clamp(32px,4.6vw,60px);line-height:.95;text-transform:uppercase;color:var(--ceniza);text-wrap:balance}
 .cabeza{display:grid;gap:18px;margin-bottom:clamp(36px,5vw,56px)}
 .cabeza.split{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);align-items:end;gap:32px}
 @media (max-width:820px){.cabeza.split{grid-template-columns:1fr}}
@@ -156,7 +159,6 @@ section{padding-block:clamp(72px,10vw,128px)}
 .contacto{background:radial-gradient(120% 90% at 85% 110%,rgba(232,116,44,.28),transparent 60%),var(--hollin);border-top:1px solid var(--hierro)}
 .contacto-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:clamp(40px,6vw,96px)}
 @media (max-width:860px){.contacto-grid{grid-template-columns:1fr}}
-.contacto h2{font-size:clamp(52px,9vw,120px)}
 .canales{display:grid;gap:0;align-content:start}
 .canal{display:grid;gap:4px;padding:18px 0;border-bottom:1px solid var(--hierro)}
 .canal:first-child{border-top:1px solid var(--hierro)}
@@ -211,7 +213,6 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
     })();
     </script>
     <div class="wrap">
-      <p class="eyebrow">Fábrica de fuegos · Tandil, desde 1987</p>
       <h1>El calor que transforma una casa en un <em>hogar</em>.</h1>
       <p class="lead">Más de 35 años fabricando salamandras. Hoy también parrillas, provoleteras, discos y hornos.</p>
       <div class="ctas">
@@ -225,8 +226,10 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
     <div class="wrap">
       <div class="cabeza split rev">
         <div style="display:grid;gap:18px">
-          <p class="eyebrow">Productos</p>
-          <h2>Nuestras líneas</h2>
+          <div class="titulo">
+            <h2>Productos</h2>
+            <p class="subtitulo">Nuestras líneas</p>
+          </div>
         </div>
         <p class="lead">Arrancamos con salamandras y hoy hacemos todo lo que va con fuego. Cada línea tiene varios modelos y medidas: consultanos y te ayudamos a elegir.</p>
       </div>
@@ -300,8 +303,10 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
   <section id="elegir">
     <div class="wrap">
       <div class="cabeza rev">
-        <p class="eyebrow">Cómo elegir</p>
-        <h2>Tres cosas antes de comprar.</h2>
+        <div class="titulo">
+          <h2>Cómo elegir</h2>
+          <p class="subtitulo">Tres cosas antes de comprar.</p>
+        </div>
       </div>
       <div class="pasos rev">
         <div class="paso"><h3>Medí los metros</h3><p>El modelo se elige por los m² que querés calefaccionar. Pasanos la medida del ambiente y te decimos cuál va.</p></div>
@@ -315,8 +320,10 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
     <div class="wrap">
       <div class="cabeza split rev">
         <div style="display:grid;gap:18px">
-          <p class="eyebrow">Por qué Verellen</p>
-          <h2>Calidad, durabilidad y diseño.</h2>
+          <div class="titulo">
+            <h2>Por qué Verellen</h2>
+            <p class="subtitulo">Calidad, durabilidad y diseño.</p>
+          </div>
         </div>
         <p class="lead">Lo que tienen todas nuestras salamandras, desde la más chica a la más grande.</p>
       </div>
@@ -332,8 +339,10 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
   <section id="instalacion" class="ficha-sec">
     <div class="wrap insta">
       <div class="insta-txt rev">
-        <p class="eyebrow">Instalación y terminaciones</p>
-        <h2>La colocamos y queda lista.</h2>
+        <div class="titulo">
+          <h2>Instalación y terminaciones</h2>
+          <p class="subtitulo">La colocamos y queda lista.</p>
+        </div>
         <p class="lead">La instalación la hacen especialistas: buscamos el mejor lugar del ambiente, hacemos la salida de humos y la conectamos. En poco tiempo tenés calefacción y un mueble que queda lindo en la casa.</p>
         <p>Hacemos envíos a todo el país.</p>
       </div>
@@ -352,8 +361,10 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
     <div class="wrap historia">
       <p class="anio rev" aria-hidden="true">1987</p>
       <div class="txt rev">
-        <p class="eyebrow">Nosotros</p>
-        <h2>Una historia, un legado.</h2>
+        <div class="titulo">
+          <h2>Nosotros</h2>
+          <p class="subtitulo">Una historia, un legado.</p>
+        </div>
         <p class="lead">Desde 1987 fabricamos salamandras, hogares, hornos y recuperadores de calor en Tandil. Lo que empezó como un taller hoy es una marca que llega a casas de todo el país, y que sumó parrillas, fogones, provoleteras y discos sin cambiar la forma de trabajar: hierro, oficio y la misma gente.</p>
         <p class="pendiente">[Foto del taller o de la familia Verellen]</p>
       </div>
@@ -363,8 +374,10 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
   <section id="contacto" class="contacto">
     <div class="wrap contacto-grid">
       <div style="display:grid;gap:22px;align-content:start" class="rev">
-        <p class="eyebrow">Contacto</p>
-        <h2>Escribinos y te asesoramos.</h2>
+        <div class="titulo">
+          <h2>Contacto</h2>
+          <p class="subtitulo">Escribinos y te asesoramos.</p>
+        </div>
         <p class="lead">Escribinos con los metros del ambiente o el producto que te interesa y te respondemos con modelos y precios.</p>
         <div class="ctas">
           <a class="btn btn-fuego" href="https://wa.me/5492494595007?text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20productos." target="_blank" rel="noopener">Escribir por WhatsApp</a>
