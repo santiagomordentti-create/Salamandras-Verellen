@@ -51,13 +51,14 @@ p{margin:0}
 /* Nav */
 .nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(21,17,14,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(238,230,220,.07)}
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:68px}
-.logo{display:flex;flex-direction:column;text-decoration:none;line-height:1}
+.logo{display:flex;flex-direction:column;text-decoration:none;line-height:1;flex:none;white-space:nowrap}
 .logo b{font-family:var(--display);font-weight:900;font-size:28px;letter-spacing:.06em}
 .logo span{font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--humo);text-transform:uppercase;margin-top:3px}
 .nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0}
-.nav ul a{text-decoration:none;font-size:15px;color:var(--humo);transition:color .2s}
+.nav ul a{text-decoration:none;font-size:15px;color:var(--humo);transition:color .2s;white-space:nowrap}
 .nav ul a:hover{color:var(--ceniza)}
 .nav .btn{padding:10px 16px;min-height:42px;font-size:15px}
+@media (max-width:1100px){.nav ul{gap:18px}}
 @media (max-width:900px){.nav ul{display:none}}
 @media (max-width:420px){.nav .btn span{display:none}}
 
@@ -78,9 +79,8 @@ section{padding-block:clamp(72px,10vw,128px)}
 .titulo{display:grid;gap:10px}
 .titulo h2{font-size:clamp(56px,8vw,104px);color:var(--brasa)}
 .subtitulo{font-family:var(--display);font-weight:800;font-size:clamp(32px,4.6vw,60px);line-height:.95;text-transform:uppercase;color:var(--ceniza);text-wrap:balance}
+#por-que{scroll-margin-top:clamp(72px,8vw,110px)}
 .cabeza{display:grid;gap:18px;margin-bottom:clamp(36px,5vw,56px)}
-.cabeza.split{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);align-items:end;gap:32px}
-@media (max-width:820px){.cabeza.split{grid-template-columns:1fr}}
 
 /* Placeholders de foto */
 .foto{position:relative;background:var(--hollin);background-image:repeating-linear-gradient(135deg,rgba(238,230,220,.035) 0 1px,transparent 1px 14px);border:1px dashed rgba(238,230,220,.14);display:flex;align-items:flex-end;padding:14px;max-width:100%;overflow:hidden}
@@ -92,9 +92,7 @@ section{padding-block:clamp(72px,10vw,128px)}
 .mundos{display:grid;gap:clamp(48px,7vw,88px)}
 .mundo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.4fr);gap:32px;border-top:1px solid var(--hierro);padding-top:28px}
 .mundo-titulo{display:grid;gap:10px;align-content:start}
-.mundo-titulo .eyebrow{color:var(--humo)}
 .mundo-titulo h3{font-size:clamp(36px,4vw,52px);font-weight:800}
-.mundo-titulo p{color:var(--humo);font-size:15px;max-width:30ch}
 @media (max-width:820px){.mundo{grid-template-columns:1fr}}
 .cats{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px}
 .cat{display:grid;gap:14px;text-decoration:none;color:inherit}
@@ -190,6 +188,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
       <ul>
         <li><a href="#productos">Productos</a></li>
         <li><a href="#elegir">Cómo elegir</a></li>
+        <li><a href="#por-que">Por qué Verellen</a></li>
         <li><a href="#instalacion">Instalación</a></li>
         <li><a href="#nosotros">Nosotros</a></li>
         <li><a href="#contacto">Contacto</a></li>
@@ -224,22 +223,17 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 
   <section id="productos">
     <div class="wrap">
-      <div class="cabeza split rev">
-        <div style="display:grid;gap:18px">
-          <div class="titulo">
-            <h2>Productos</h2>
-            <p class="subtitulo">Nuestras líneas</p>
-          </div>
+      <div class="cabeza rev">
+        <div class="titulo">
+          <h2>Productos</h2>
+          <p class="subtitulo">Nuestras líneas</p>
         </div>
-        <p class="lead">Arrancamos con salamandras y hoy hacemos todo lo que va con fuego. Cada línea tiene varios modelos y medidas: consultanos y te ayudamos a elegir.</p>
       </div>
 
       <div class="mundos">
         <div class="mundo rev">
           <div class="mundo-titulo">
-            <p class="eyebrow">01 · Calefacción</p>
             <h3>Calor de hogar</h3>
-            <p>Calor seco y parejo, sin olor ni humo, con poco consumo de leña.</p>
           </div>
           <div class="cats">
             <a class="cat" href="#contacto"><div class="foto"><small>Salamandra en living</small></div><div class="cat-txt"><b>Salamandras <i>→</i></b><span>Líneas ST, SH, Compact y M</span></div></a>
@@ -250,9 +244,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 
         <div class="mundo rev">
           <div class="mundo-titulo">
-            <p class="eyebrow">02 · Cocina a la leña</p>
             <h3>Para la parrilla</h3>
-            <p>Hierro pensado para el asado, la provoleta y el disco del domingo.</p>
           </div>
           <div class="cats">
             <a class="cat" href="#contacto"><div class="foto"><small>Parrilla Angus</small></div><div class="cat-txt"><b>Parrillas <i>→</i></b><span>Angus 850, 1100 y para revestir</span></div></a>
@@ -264,9 +256,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 
         <div class="mundo rev">
           <div class="mundo-titulo">
-            <p class="eyebrow">03 · Afuera y accesorios</p>
             <h3>Alrededor del fuego</h3>
-            <p>Para el patio y para tener la leña a mano.</p>
           </div>
           <div class="cats">
             <a class="cat" href="#contacto"><div class="foto"><small>Fogón en el jardín</small></div><div class="cat-txt"><b>Fogones <i>→</i></b><span>Forgeron, 090 y 050</span></div></a>
@@ -316,16 +306,13 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
     </div>
   </section>
 
-  <section style="padding-top:0">
+  <section id="por-que" style="padding-top:0">
     <div class="wrap">
-      <div class="cabeza split rev">
-        <div style="display:grid;gap:18px">
-          <div class="titulo">
-            <h2>Por qué Verellen</h2>
-            <p class="subtitulo">Calidad, durabilidad y diseño.</p>
-          </div>
+      <div class="cabeza rev">
+        <div class="titulo">
+          <h2>Por qué Verellen</h2>
+          <p class="subtitulo">Calidad, durabilidad y diseño.</p>
         </div>
-        <p class="lead">Lo que tienen todas nuestras salamandras, desde la más chica a la más grande.</p>
       </div>
       <div class="porque rev">
         <div><b>Calor seco, sin humo</b><p>Todas tienen un pulmón que da una temperatura estable, sin olor ni humo, al prender y mientras funciona.</p></div>
