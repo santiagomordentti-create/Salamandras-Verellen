@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Verellen Fuegos</title>
+<meta name="description" content="Salamandras, hogares, parrillas, provoleteras, discos y hornos a leña. Fabricados en Tandil desde 1987.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800;900&family=Hanken+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: una sola columna editorial; el hero es fuego vivo, el resto se apaga hacia la brasa. Dos mundos: calefaccionar / cocinar. */
+:root{
+  --carbon:#15110E;      /* fondo base */
+  --hollin:#1D1814;      /* superficies */
+  --hierro:#2B241F;      /* bordes y placeholders */
+  --ceniza:#EEE6DC;      /* texto */
+  --humo:#A99C8E;        /* texto secundario */
+  --brasa:#E8742C;       /* acción */
+  --ambar:#F4B04F;       /* brillo */
+  --display:"Big Shoulders Display", "Arial Narrow", Impact, sans-serif;
+  --body:"Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --gutter:clamp(16px,5vw,64px);
+  --max:1200px;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--carbon);color:var(--ceniza);font-family:var(--body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+img{max-width:100%}
+.wrap{max-width:var(--max);margin-inline:auto;padding-inline:var(--gutter)}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ambar)}
+h1,h2,h3{font-family:var(--display);font-weight:800;line-height:.92;letter-spacing:.005em;text-transform:uppercase;margin:0;text-wrap:balance}
+h2{font-size:clamp(44px,7vw,88px)}
+h3{font-size:30px;font-weight:700;line-height:1}
+p{margin:0}
+.lead{color:var(--humo);max-width:56ch;font-size:18px}
+:focus-visible{outline:2px solid var(--ambar);outline-offset:3px;border-radius:2px}
+
+/* Botones */
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--body);font-weight:600;font-size:16px;text-decoration:none;padding:15px 24px;min-height:48px;border-radius:2px;border:1px solid transparent;transition:background .2s ease-out,color .2s ease-out,border-color .2s ease-out,transform .2s ease-out}
+.btn-fuego{background:var(--brasa);color:#1A0F07}
+.btn-fuego:hover{background:var(--ambar)}
+.btn-linea{border-color:rgba(238,230,220,.28);color:var(--ceniza)}
+.btn-linea:hover{border-color:var(--ceniza)}
+.btn svg{width:18px;height:18px;flex:none}
+
+/* Nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(21,17,14,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(238,230,220,.07)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:68px}
+.logo{display:flex;flex-direction:column;text-decoration:none;line-height:1}
+.logo b{font-family:var(--display);font-weight:900;font-size:28px;letter-spacing:.06em}
+.logo span{font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--humo);text-transform:uppercase;margin-top:3px}
+.nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0}
+.nav ul a{text-decoration:none;font-size:15px;color:var(--humo);transition:color .2s}
+.nav ul a:hover{color:var(--ceniza)}
+.nav .btn{padding:10px 16px;min-height:42px;font-size:15px}
+@media (max-width:900px){.nav ul{display:none}}
+@media (max-width:420px){.nav .btn span{display:none}}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;isolation:isolate;border-bottom:1px solid var(--hierro);background:var(--carbon) url(assets/hero-bg.jpg) 70% 80%/cover no-repeat}
+@media (max-width:759px){.hero{background-image:url(assets/hero-bg-mobile.jpg)}}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% 80%;z-index:-1}
+@media (prefers-reduced-motion:reduce){.hero-video{display:none}}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(21,17,14,.92) 0%,rgba(21,17,14,.55) 50%,rgba(21,17,14,.15) 100%),linear-gradient(0deg,var(--carbon) 0%,transparent 35%)}
+.hero .wrap{padding-block:clamp(72px,12vw,150px) clamp(56px,8vw,96px);display:grid;gap:28px}
+.hero h1{font-size:clamp(60px,12vw,168px);max-width:9ch}
+.hero h1 em{font-style:normal;color:var(--brasa)}
+.hero .lead{color:#CFC4B7;font-size:clamp(17px,1.6vw,20px)}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+.datos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--hierro);margin-top:clamp(32px,5vw,64px)}
+.datos div{padding:22px 20px 0 0;display:grid;gap:4px}
+.datos div+div{padding-left:20px;border-left:1px solid var(--hierro)}
+.datos strong{font-family:var(--display);font-weight:800;font-size:clamp(34px,4.5vw,56px);line-height:1;color:var(--ambar)}
+.datos span{font-size:14px;color:var(--humo)}
+@media (max-width:640px){.datos{grid-template-columns:1fr}.datos div+div{border-left:0;padding-left:0;border-top:1px solid var(--hierro);margin-top:18px}}
+
+/* Secciones */
+section{padding-block:clamp(72px,10vw,128px)}
+.cabeza{display:grid;gap:18px;margin-bottom:clamp(36px,5vw,56px)}
+.cabeza.split{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);align-items:end;gap:32px}
+@media (max-width:820px){.cabeza.split{grid-template-columns:1fr}}
+
+/* Placeholders de foto */
+.foto{position:relative;background:var(--hollin);background-image:repeating-linear-gradient(135deg,rgba(238,230,220,.035) 0 1px,transparent 1px 14px);border:1px dashed rgba(238,230,220,.14);display:flex;align-items:flex-end;padding:14px;max-width:100%;overflow:hidden}
+.foto::before{content:"";position:absolute;left:50%;bottom:-40%;width:90%;aspect-ratio:1;transform:translateX(-50%);background:radial-gradient(circle,rgba(232,116,44,.22),transparent 65%);pointer-events:none}
+.foto small{position:relative;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--humo);text-transform:uppercase}
+.foto small::before{content:"FOTO · ";color:var(--brasa)}
+
+/* Dos mundos */
+.mundos{display:grid;gap:clamp(48px,7vw,88px)}
+.mundo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.4fr);gap:32px;border-top:1px solid var(--hierro);padding-top:28px}
+.mundo-titulo{display:grid;gap:10px;align-content:start}
+.mundo-titulo .eyebrow{color:var(--humo)}
+.mundo-titulo h3{font-size:clamp(36px,4vw,52px);font-weight:800}
+.mundo-titulo p{color:var(--humo);font-size:15px;max-width:30ch}
+@media (max-width:820px){.mundo{grid-template-columns:1fr}}
+.cats{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px}
+.cat{display:grid;gap:14px;text-decoration:none;color:inherit}
+.cat .foto{aspect-ratio:4/5;transition:border-color .25s ease-out}
+.cat .foto::before{opacity:.5;transition:opacity .3s ease-out}
+.cat:hover .foto{border-color:rgba(232,116,44,.6)}
+.cat:hover .foto::before{opacity:1}
+.cat-txt{display:grid;gap:4px}
+.cat-txt b{font-family:var(--display);font-weight:700;font-size:26px;text-transform:uppercase;line-height:1;display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.cat-txt b i{font-style:normal;font-family:var(--body);font-size:18px;color:var(--brasa);transition:transform .2s ease-out}
+.cat:hover .cat-txt b i{transform:translateX(4px)}
+.cat-txt span{font-size:14px;color:var(--humo)}
+.nuevo{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:#1A0F07;background:var(--ambar);padding:2px 6px;border-radius:2px;vertical-align:middle;margin-left:6px}
+
+/* Ficha destacada */
+.ficha-sec{background:var(--hollin);border-block:1px solid var(--hierro)}
+.ficha{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,72px);align-items:center}
+@media (max-width:860px){.ficha{grid-template-columns:1fr}}
+.ficha .foto{aspect-ratio:1;background-color:var(--carbon)}
+.ficha-info{display:grid;gap:22px}
+.modelo{font-family:var(--display);font-weight:900;font-size:clamp(72px,10vw,132px);line-height:.85;color:var(--ceniza)}
+.modelo small{display:block;font-family:var(--mono);font-weight:400;font-size:12px;letter-spacing:.14em;color:var(--ambar);margin-bottom:12px}
+.specs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid var(--hierro)}
+.specs div{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid var(--hierro);font-family:var(--mono);font-size:14px;font-variant-numeric:tabular-nums}
+.specs div:nth-child(odd){padding-right:20px}
+.specs div:nth-child(even){padding-left:20px;border-left:1px solid var(--hierro)}
+.specs dt{color:var(--humo)}
+.specs dd{margin:0;color:var(--ceniza);text-align:right}
+@media (max-width:480px){.specs{grid-template-columns:1fr}.specs div:nth-child(odd),.specs div:nth-child(even){padding-inline:0;border-left:0}}
+
+/* Pasos para elegir */
+.pasos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;counter-reset:paso}
+.paso{padding:28px 28px 8px 0;display:grid;gap:12px;align-content:start;border-top:2px solid var(--hierro);position:relative}
+.paso+.paso{padding-left:28px}
+.paso::before{counter-increment:paso;content:"0" counter(paso);font-family:var(--mono);font-size:13px;color:var(--brasa)}
+.paso:first-child{border-top-color:var(--brasa)}
+.paso p{color:var(--humo);font-size:16px}
+@media (max-width:820px){.pasos{grid-template-columns:1fr}.paso+.paso{padding-left:0}}
+
+/* Por qué */
+.porque{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--hierro);border:1px solid var(--hierro)}
+.porque div{background:var(--carbon);padding:clamp(24px,3vw,36px);display:grid;gap:10px;align-content:start}
+.porque b{font-family:var(--display);font-weight:700;font-size:28px;text-transform:uppercase;line-height:1}
+.porque p{color:var(--humo);font-size:16px;max-width:44ch}
+@media (max-width:700px){.porque{grid-template-columns:1fr}}
+
+/* Instalación */
+.insta{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:clamp(32px,5vw,72px);align-items:start}
+@media (max-width:860px){.insta{grid-template-columns:1fr}}
+.insta-txt{display:grid;gap:20px}
+.galeria{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.galeria .foto{aspect-ratio:3/4}
+.galeria .foto:first-child{grid-column:span 2;grid-row:span 2;aspect-ratio:auto}
+
+/* Historia */
+.historia{display:grid;grid-template-columns:minmax(0,auto) minmax(0,1fr);gap:clamp(24px,5vw,80px);align-items:center}
+.anio{font-family:var(--display);font-weight:900;font-size:clamp(110px,22vw,300px);line-height:.8;color:transparent;-webkit-text-stroke:1.5px var(--brasa)}
+.historia .txt{display:grid;gap:18px}
+@media (max-width:760px){.historia{grid-template-columns:1fr}}
+
+/* Contacto */
+.contacto{background:radial-gradient(120% 90% at 85% 110%,rgba(232,116,44,.28),transparent 60%),var(--hollin);border-top:1px solid var(--hierro)}
+.contacto-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:clamp(40px,6vw,96px)}
+@media (max-width:860px){.contacto-grid{grid-template-columns:1fr}}
+.contacto h2{font-size:clamp(52px,9vw,120px)}
+.canales{display:grid;gap:0;align-content:start}
+.canal{display:grid;gap:4px;padding:18px 0;border-bottom:1px solid var(--hierro)}
+.canal:first-child{border-top:1px solid var(--hierro)}
+.canal span{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--humo)}
+.canal a,.canal p{font-size:19px;text-decoration:none;word-break:break-word}
+.canal a:hover{color:var(--ambar)}
+.pendiente{color:var(--ambar);font-family:var(--mono);font-size:13px}
+
+footer{padding-block:32px calc(32px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--hierro);color:var(--humo);font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+
+/* WhatsApp flotante (mobile) */
+.wa-flot{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;width:56px;height:56px;border-radius:50%;background:var(--brasa);color:#1A0F07;display:none;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,.45)}
+.wa-flot svg{width:26px;height:26px}
+@media (max-width:760px){.wa-flot{display:flex}}
+
+/* Entrada suave: visible por defecto, se anima solo si hay JS */
+.js .rev{opacity:0;transform:translateY(16px);transition:opacity .6s ease-out,transform .6s ease-out}
+.js .rev.vis{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js .rev{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#inicio" aria-label="Verellen, inicio"><b>VERELLEN</b><span>Fuegos · Tandil</span></a>
+    <nav aria-label="Principal">
+      <ul>
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#elegir">Cómo elegir</a></li>
+        <li><a href="#instalacion">Instalación</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-fuego" href="https://wa.me/5492494595007?text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20productos." target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+      <span>Consultar</span>
+    </a>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="hero" style="padding-block:0">
+    <video class="hero-video" src="assets/hero-loop.mp4" poster="assets/hero-bg.jpg" autoplay muted loop playsinline aria-hidden="true"></video>
+    <script>
+    // Poster vertical en celular; sin video si el usuario pidió menos movimiento
+    (function(){var v=document.currentScript.previousElementSibling,mq=window.matchMedia;if(!mq)return;
+      if(mq('(max-width: 759px)').matches)v.poster='assets/hero-bg-mobile.jpg';
+      if(mq('(prefers-reduced-motion: reduce)').matches){v.removeAttribute('autoplay');v.pause();v.removeAttribute('src');v.load();}
+    })();
+    </script>
+    <div class="wrap">
+      <p class="eyebrow">Fábrica de fuegos · Tandil, desde 1987</p>
+      <h1>Todo lo que se hace con <em>fuego</em>.</h1>
+      <p class="lead">Salamandras, hogares, parrillas, provoleteras, discos y hornos. Los fabricamos en hierro, en Tandil, para calefaccionar tu casa y para cocinar a la leña.</p>
+      <div class="ctas">
+        <a class="btn btn-fuego" href="https://wa.me/5492494595007?text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20productos." target="_blank" rel="noopener">Consultar por WhatsApp</a>
+        <a class="btn btn-linea" href="#productos">Ver productos</a>
+      </div>
+      <div class="datos">
+        <div><strong>1987</strong><span>Fabricando en Tandil</span></div>
+        <div><strong>200 m²</strong><span>Calefacciona una sola ST-V 060</span></div>
+        <div><strong>2 a 5</strong><span>Salidas de aire caliente a otros ambientes</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="productos">
+    <div class="wrap">
+      <div class="cabeza split rev">
+        <div style="display:grid;gap:18px">
+          <p class="eyebrow">Productos</p>
+          <h2>Para calentar la casa. Para la parrilla.</h2>
+        </div>
+        <p class="lead">Arrancamos con salamandras y hoy hacemos todo lo que va con fuego. Cada línea tiene varios modelos y medidas: consultanos y te ayudamos a elegir.</p>
+      </div>
+
+      <div class="mundos">
+        <div class="mundo rev">
+          <div class="mundo-titulo">
+            <p class="eyebrow">01 · Calefacción</p>
+            <h3>Calor de hogar</h3>
+            <p>Calor seco y parejo, sin olor ni humo, con poco consumo de leña.</p>
+          </div>
+          <div class="cats">
+            <a class="cat" href="#contacto"><div class="foto"><small>Salamandra en living</small></div><div class="cat-txt"><b>Salamandras <i>→</i></b><span>Líneas ST, SH, Compact y M</span></div></a>
+            <a class="cat" href="#contacto"><div class="foto"><small>Hogar empotrado</small></div><div class="cat-txt"><b>Hogares <i>→</i></b><span>En hierro y a medida</span></div></a>
+            <a class="cat" href="#contacto"><div class="foto"><small>Salamandra con horno</small></div><div class="cat-txt"><b>Con horno <i>→</i></b><span>Calefacciona y cocina</span></div></a>
+          </div>
+        </div>
+
+        <div class="mundo rev">
+          <div class="mundo-titulo">
+            <p class="eyebrow">02 · Cocina a la leña</p>
+            <h3>Para la parrilla</h3>
+            <p>Hierro pensado para el asado, la provoleta y el disco del domingo.</p>
+          </div>
+          <div class="cats">
+            <a class="cat" href="#contacto"><div class="foto"><small>Parrilla Angus</small></div><div class="cat-txt"><b>Parrillas <i>→</i></b><span>Angus 850, 1100 y para revestir</span></div></a>
+            <a class="cat" href="#contacto"><div class="foto"><small>Provoletera en brasa</small></div><div class="cat-txt"><b><span>Provoleteras <span class="nuevo">NUEVO</span></span> <i>→</i></b><span>[Modelos y medidas]</span></div></a>
+            <a class="cat" href="#contacto"><div class="foto"><small>Disco de arado</small></div><div class="cat-txt"><b><span>Discos <span class="nuevo">NUEVO</span></span> <i>→</i></b><span>[Modelos y medidas]</span></div></a>
+            <a class="cat" href="#contacto"><div class="foto"><small>Horno Brasato</small></div><div class="cat-txt"><b>Hornos <i>→</i></b><span>Empotrables y Brasato</span></div></a>
+          </div>
+        </div>
+
+        <div class="mundo rev">
+          <div class="mundo-titulo">
+            <p class="eyebrow">03 · Afuera y accesorios</p>
+            <h3>Alrededor del fuego</h3>
+            <p>Para el patio y para tener la leña a mano.</p>
+          </div>
+          <div class="cats">
+            <a class="cat" href="#contacto"><div class="foto"><small>Fogón en el jardín</small></div><div class="cat-txt"><b>Fogones <i>→</i></b><span>Forgeron, 090 y 050</span></div></a>
+            <a class="cat" href="#contacto"><div class="foto"><small>Leñero con ruedas</small></div><div class="cat-txt"><b>Accesorios <i>→</i></b><span>Leñeros, planchetas y más</span></div></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ficha-sec" aria-labelledby="destacada">
+    <div class="wrap ficha">
+      <div class="foto rev"><small>ST-V 060 de frente, fuego encendido</small></div>
+      <div class="ficha-info rev">
+        <p class="eyebrow" id="destacada">La más pedida</p>
+        <p class="modelo"><small>Salamandra · vidrio vitrocerámico</small>ST-V 060</p>
+        <p class="lead">Para ambientes medianos y grandes. Carga lateral de leña y frente que se abre para limpiar el vidrio y las cenizas. Leñero y recuperador opcionales.</p>
+        <dl class="specs">
+          <div><dt>Calefacciona</dt><dd>60 a 200 m²</dd></div>
+          <div><dt>Potencia</dt><dd>16.000 kcal/h</dd></div>
+          <div><dt>Autonomía</dt><dd>hasta 7 h</dd></div>
+          <div><dt>Peso</dt><dd>110 kg</dd></div>
+          <div><dt>Ancho × prof.</dt><dd>600 × 450 mm</dd></div>
+          <div><dt>Salida de humos</dt><dd>6″</dd></div>
+        </dl>
+        <div class="ctas">
+          <a class="btn btn-fuego" href="https://wa.me/5492494595007?text=Hola%21%20Quisiera%20consultar%20por%20la%20salamandra%20ST-V%20060." target="_blank" rel="noopener">Consultar por la ST-V 060</a>
+          <a class="btn btn-linea" href="#productos">Ver todas las salamandras</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="elegir">
+    <div class="wrap">
+      <div class="cabeza rev">
+        <p class="eyebrow">Cómo elegir</p>
+        <h2>Tres cosas antes de comprar.</h2>
+      </div>
+      <div class="pasos rev">
+        <div class="paso"><h3>Medí los metros</h3><p>El modelo se elige por los m² que querés calefaccionar. Pasanos la medida del ambiente y te decimos cuál va.</p></div>
+        <div class="paso"><h3>Elegí dónde va</h3><p>Lejos de escaleras y tragaluces, que se llevan el aire caliente arriba. Si querés llegar a otros ambientes, sumás un recuperador.</p></div>
+        <div class="paso"><h3>Usá leña seca</h3><p>La leña húmeda calienta menos, cuesta prenderla y ensucia los caños. Bien estacionada rinde el doble.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="cabeza split rev">
+        <div style="display:grid;gap:18px">
+          <p class="eyebrow">Por qué Verellen</p>
+          <h2>Hechas para durar años.</h2>
+        </div>
+        <p class="lead">Lo que tienen todas nuestras salamandras, desde la más chica a la más grande.</p>
+      </div>
+      <div class="porque rev">
+        <div><b>Calor seco, sin humo</b><p>Todas tienen un pulmón que da una temperatura estable, sin olor ni humo, al prender y mientras funciona.</p></div>
+        <div><b>Calor a otros ambientes</b><p>Con el recuperador, llevás el aire caliente a otras habitaciones: de 2 a 5 salidas según el modelo.</p></div>
+        <div><b>Poca leña</b><p>La cámara de combustión grande guarda mucha leña y la quema despacio. Cargás menos veces por noche.</p></div>
+        <div><b>Casi sin mantenimiento</b><p>Construcción robusta y hermética. Funciona bien por muchos años sin que tengas que hacerle nada.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="instalacion" class="ficha-sec">
+    <div class="wrap insta">
+      <div class="insta-txt rev">
+        <p class="eyebrow">Instalación y terminaciones</p>
+        <h2>La colocamos y queda lista.</h2>
+        <p class="lead">La instalación la hacen especialistas: buscamos el mejor lugar del ambiente, hacemos la salida de humos y la conectamos. En poco tiempo tenés calefacción y un mueble que queda lindo en la casa.</p>
+        <p class="pendiente">[Confirmar zona de instalación y envíos]</p>
+      </div>
+      <div class="galeria rev">
+        <div class="foto"><small>Terminación en living</small></div>
+        <div class="foto"><small>Detalle de caños</small></div>
+        <div class="foto"><small>Revestimiento</small></div>
+        <div class="foto"><small>Obra terminada</small></div>
+        <div class="foto"><small>Hogar a medida</small></div>
+        <div class="foto"><small>Salamandra esquinera</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="nosotros">
+    <div class="wrap historia">
+      <p class="anio rev" aria-hidden="true">1987</p>
+      <div class="txt rev">
+        <p class="eyebrow">Nosotros</p>
+        <h2>Una fábrica de Tandil.</h2>
+        <p class="lead">Desde 1987 fabricamos salamandras, hogares, hornos y recuperadores de calor que se adaptan al tamaño y al estilo de cada casa. Con los años sumamos parrillas, fogones, provoleteras y discos: todo lo que se hace con fuego, hecho por la misma gente.</p>
+        <p class="pendiente">[Foto del taller o de la familia Verellen]</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" class="contacto">
+    <div class="wrap contacto-grid">
+      <div style="display:grid;gap:22px;align-content:start" class="rev">
+        <p class="eyebrow">Contacto</p>
+        <h2>Contanos qué necesitás.</h2>
+        <p class="lead">Escribinos con los metros del ambiente o el producto que te interesa y te respondemos con modelos y precios.</p>
+        <div class="ctas">
+          <a class="btn btn-fuego" href="https://wa.me/5492494595007?text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20productos." target="_blank" rel="noopener">Escribir por WhatsApp</a>
+          <a class="btn btn-linea" href="https://maps.google.com/?q=Salamandras+Verellen+Tandil" target="_blank" rel="noopener">Cómo llegar</a>
+        </div>
+      </div>
+      <div class="canales rev">
+        <div class="canal"><span>WhatsApp</span><a href="https://wa.me/5492494595007" target="_blank" rel="noopener">0249 15 459-5007</a></div>
+        <div class="canal"><span>Fábrica y showroom</span><p>Colectora Pugliese 51, Tandil, Buenos Aires</p></div>
+        <div class="canal"><span>Mail</span><p>ventas@salamandrasverellen.com.ar</p></div>
+        <div class="canal"><span>Horarios</span><p class="pendiente">[Días y horarios de atención]</p></div>
+        <div class="canal"><span>Redes</span><p><a href="https://www.instagram.com/salamandrasverellen/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.facebook.com/verellensalamandras" target="_blank" rel="noopener">Facebook</a></p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Salamandras Verellen · Tandil</span>
+    <span>Fábrica de fuegos desde 1987</span>
+  </div>
+</footer>
+
+<a class="wa-flot" href="https://wa.me/5492494595007?text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20productos." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+</a>
+
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  // Entrada suave de secciones
+  var els=document.querySelectorAll('.rev');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target);}})},{rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(el){io.observe(el)});
+    // Lo que ya está en pantalla se muestra enseguida
+    setTimeout(function(){els.forEach(function(el){if(el.getBoundingClientRect().top<innerHeight)el.classList.add('vis')})},50);
+  } else { els.forEach(function(el){el.classList.add('vis')}); }
+})();
+</script>
+</body>
+</html>
