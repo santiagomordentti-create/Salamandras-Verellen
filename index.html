@@ -22,7 +22,7 @@
   --body:"Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
   --mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
   --gutter:clamp(16px,5vw,64px);
-  --max:1200px;
+  --max:1440px;
   color-scheme:dark;
 }
 *{box-sizing:border-box}
@@ -90,12 +90,12 @@ section{padding-block:clamp(72px,10vw,128px)}
 
 /* Dos mundos */
 .mundos{display:grid;gap:clamp(48px,7vw,88px)}
-.mundo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.4fr);gap:32px;border-top:1px solid var(--hierro);padding-top:28px}
-.mundo-titulo{display:grid;gap:10px;align-content:start}
-.mundo-titulo h3{font-size:clamp(36px,4vw,52px);font-weight:800}
-@media (max-width:820px){.mundo{grid-template-columns:1fr}}
-.cats{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px}
-.cat{display:grid;gap:14px;text-decoration:none;color:inherit}
+.mundo{display:grid;gap:clamp(20px,2.5vw,32px);border-top:1px solid var(--hierro);padding-top:28px}
+.mundo h3{font-size:clamp(36px,4vw,52px);font-weight:800}
+.cats{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:20px}
+@media (max-width:1200px){.cats{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:760px){.cats{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}}
+.cat{display:grid;gap:14px;align-content:start;text-decoration:none;color:inherit}
 .cat .foto{aspect-ratio:4/5;transition:border-color .25s ease-out}
 .cat .foto::before{opacity:.5;transition:opacity .3s ease-out}
 .cat:hover .foto{border-color:rgba(232,116,44,.6)}
@@ -104,7 +104,8 @@ section{padding-block:clamp(72px,10vw,128px)}
 .cat-txt b{font-family:var(--display);font-weight:700;font-size:26px;text-transform:uppercase;line-height:1;display:flex;justify-content:space-between;align-items:baseline;gap:8px}
 .cat-txt b i{font-style:normal;font-family:var(--body);font-size:18px;color:var(--brasa);transition:transform .2s ease-out}
 .cat:hover .cat-txt b i{transform:translateX(4px)}
-.cat-txt span{font-size:14px;color:var(--humo)}
+.cat-txt>span{font-size:14px;color:var(--humo)}
+@media (max-width:760px){.cat-txt b{font-size:22px}}
 .nuevo{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:#1A0F07;background:var(--ambar);padding:2px 6px;border-radius:2px;vertical-align:middle;margin-left:6px}
 
 /* Ficha destacada */
@@ -232,35 +233,24 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 
       <div class="mundos">
         <div class="mundo rev">
-          <div class="mundo-titulo">
-            <h3>Calor de hogar</h3>
-          </div>
+          <h3>Calefacción</h3>
           <div class="cats">
             <a class="cat" href="#contacto"><div class="foto"><small>Salamandra en living</small></div><div class="cat-txt"><b>Salamandras <i>→</i></b><span>Líneas ST, SH, Compact y M</span></div></a>
             <a class="cat" href="#contacto"><div class="foto"><small>Hogar empotrado</small></div><div class="cat-txt"><b>Hogares <i>→</i></b><span>En hierro y a medida</span></div></a>
             <a class="cat" href="#contacto"><div class="foto"><small>Salamandra con horno</small></div><div class="cat-txt"><b>Con horno <i>→</i></b><span>Calefacciona y cocina</span></div></a>
+            <a class="cat" href="#contacto"><div class="foto"><small>Fogón en el jardín</small></div><div class="cat-txt"><b>Fogones <i>→</i></b><span>Forgeron, 090 y 050</span></div></a>
+            <a class="cat" href="#contacto"><div class="foto"><small>Leñero con ruedas</small></div><div class="cat-txt"><b>Leñeros <i>→</i></b><span>Grande con ruedas y chico</span></div></a>
           </div>
         </div>
 
         <div class="mundo rev">
-          <div class="mundo-titulo">
-            <h3>Para la parrilla</h3>
-          </div>
+          <h3>Parrilla y accesorios</h3>
           <div class="cats">
             <a class="cat" href="#contacto"><div class="foto"><small>Parrilla Angus</small></div><div class="cat-txt"><b>Parrillas <i>→</i></b><span>Angus 850, 1100 y para revestir</span></div></a>
             <a class="cat" href="#contacto"><div class="foto"><small>Provoletera en brasa</small></div><div class="cat-txt"><b><span>Provoleteras <span class="nuevo">NUEVO</span></span> <i>→</i></b><span>[Modelos y medidas]</span></div></a>
             <a class="cat" href="#contacto"><div class="foto"><small>Disco de arado</small></div><div class="cat-txt"><b><span>Discos <span class="nuevo">NUEVO</span></span> <i>→</i></b><span>[Modelos y medidas]</span></div></a>
             <a class="cat" href="#contacto"><div class="foto"><small>Horno Brasato</small></div><div class="cat-txt"><b>Hornos <i>→</i></b><span>Empotrables y Brasato</span></div></a>
-          </div>
-        </div>
-
-        <div class="mundo rev">
-          <div class="mundo-titulo">
-            <h3>Alrededor del fuego</h3>
-          </div>
-          <div class="cats">
-            <a class="cat" href="#contacto"><div class="foto"><small>Fogón en el jardín</small></div><div class="cat-txt"><b>Fogones <i>→</i></b><span>Forgeron, 090 y 050</span></div></a>
-            <a class="cat" href="#contacto"><div class="foto"><small>Leñero con ruedas</small></div><div class="cat-txt"><b>Accesorios <i>→</i></b><span>Leñeros, planchetas y más</span></div></a>
+            <a class="cat" href="#contacto"><div class="foto"><small>Plancheta sobre la parrilla</small></div><div class="cat-txt"><b>Planchetas <i>→</i></b><span>Para la parrilla Angus</span></div></a>
           </div>
         </div>
       </div>
