@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <!-- Motitas color carbón (#15110E) con transparencia: zonas chamuscadas para los títulos Brasa.
+       El alfa sale del ruido (3·R − 1.85), así solo los picos del ruido dejan mancha y ninguna llega a tapar del todo. -->
+  <filter id="quemado" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/>
+    <feColorMatrix type="matrix" values="0 0 0 0 0.0824  0 0 0 0 0.0667  0 0 0 0 0.0549  3 0 0 0 -1.85"/>
+  </filter>
+  <rect width="400" height="400" filter="url(#quemado)"/>
+</svg>

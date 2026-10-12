@@ -8,6 +8,10 @@
   --humo:#A99C8E;        /* texto secundario */
   --brasa:#E8742C;       /* acción */
   --ambar:#F4B04F;       /* brillo */
+  --brasa-1:#6B3A1E;     /* títulos Brasa: carbonizado (arriba) */
+  --brasa-2:var(--brasa);/* títulos Brasa: brasa (55%) */
+  --brasa-3:var(--ambar);/* títulos Brasa: ámbar (abajo) */
+  --brasa-apagada:#7A4322; /* títulos Brasa antes de encenderse */
   --display:"Big Shoulders Display", "Arial Narrow", Impact, sans-serif;
   --body:"Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
   --mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
@@ -81,7 +85,33 @@ section{padding-block:clamp(72px,10vw,128px)}
 .titulo{display:grid;gap:10px}
 .titulo h2{font-size:clamp(56px,8vw,104px);color:var(--brasa)}
 .subtitulo{font-family:var(--display);font-weight:800;font-size:clamp(32px,4.6vw,60px);line-height:.95;text-transform:uppercase;color:var(--ceniza);text-wrap:balance}
-#por-que,.mundo[id]{scroll-margin-top:clamp(72px,8vw,110px)}
+#por-que,.grupo-sep[id]{scroll-margin-top:clamp(72px,8vw,110px)}
+
+/* Títulos Brasa: degradado de carbonizado a ámbar recortado al texto, con motitas chamuscadas encima.
+   Sin soporte de background-clip:text quedan en naranja sólido (el color de arriba). */
+@supports ((-webkit-background-clip:text) or (background-clip:text)){
+  .titulo h2,.titulo h1,.hero h1 em{color:transparent;-webkit-text-fill-color:transparent;
+    background-image:url(textura-quemado.svg),linear-gradient(180deg,var(--brasa-1) 0%,var(--brasa-2) 55%,var(--brasa-3) 100%);
+    background-size:300px 300px,100% 100%;background-repeat:repeat,no-repeat;-webkit-background-clip:text;background-clip:text;
+    /* El fondo solo pinta dentro de la caja: con line-height .92 las tildes (Ó, É) quedan afuera y desaparecen.
+       El padding agranda la caja y el margen negativo lo compensa, así no se mueve nada */
+    padding-block:.14em .06em;margin-block:-.14em -.06em}
+  /* Encendido (solo en la home, .encender): el degradado mide 300% de alto; arriba está apagado y abajo encendido.
+     Sin JS o con menos movimiento no aplica y el título se ve encendido desde el principio. */
+  @media (prefers-reduced-motion:no-preference){
+    .js .encender{background-image:url(textura-quemado.svg),linear-gradient(180deg,var(--brasa-apagada) 0%,var(--brasa-apagada) 33.333%,var(--brasa-1) 66.667%,var(--brasa-2) 85%,var(--brasa-3) 100%);
+      background-size:300px 300px,100% 300%;background-position:0 0,0 0;transition:background-position 1.2s ease-out}
+    .js .encender.encendido{background-position:0 0,0 100%;animation:resplandor 1.6s ease-out}
+  }
+}
+/* drop-shadow en vez de text-shadow: con el texto recortado, text-shadow se pinta encima del degradado */
+@keyframes resplandor{0%,100%{filter:drop-shadow(0 0 0 rgba(232,116,44,0))}35%{filter:drop-shadow(0 0 18px rgba(232,116,44,.4))}}
+
+/* Sección clara (reusable): fondo crema y textos oscuros. El degradado Brasa se oscurece para mantener contraste */
+.seccion-clara{--texto:var(--carbon);--texto-2:#5C5047;--linea:rgba(21,17,14,.15);--brasa-1:#4A2612;--brasa-2:#C25A1F;--brasa-3:#CF6A28;background:var(--ceniza);color:var(--texto)}
+.seccion-clara .subtitulo,.seccion-clara h3{color:var(--texto)}
+.seccion-clara .lead{color:var(--texto-2)}
+.seccion-clara :focus-visible{outline-color:var(--carbon)}
 .cabeza{display:grid;gap:18px;margin-bottom:clamp(36px,5vw,56px)}
 
 /* Placeholders de foto */
@@ -98,8 +128,40 @@ section{padding-block:clamp(72px,10vw,128px)}
 @media (max-width:1200px){.cats{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (max-width:760px){.cats{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}}
 /* Grupo de 6 tarjetas: 6 columnas en pantallas grandes y 3 hasta tablet, para que no quede una sola en la segunda fila */
-@media (min-width:1281px){.cats.seis{grid-template-columns:repeat(6,minmax(0,1fr))}}
-@media (min-width:761px) and (max-width:1280px){.cats.seis{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+/* Productos de la home: carrusel horizontal.
+   Escritorio (≥1024px y ≥640px de alto): el JS pone .carrusel-activo; la pista queda sticky y la fila se corre con el scroll.
+   Más chico: la fila se desliza con el dedo. Escritorio con menos movimiento: la grilla de siempre. */
+.carrusel{--card-w:clamp(200px,calc(62vh - 250px),340px);padding-block:0}
+.carrusel-pista{display:flex;flex-direction:column;justify-content:center;gap:clamp(24px,4vh,48px);padding-block:clamp(48px,7vh,96px)}
+.carrusel .cabeza{margin-bottom:0}
+.carrusel-pista>.wrap{width:100%}
+.carrusel-ventana{--pad-fila:max(var(--gutter),calc((100% - var(--max)) / 2 + var(--gutter)));overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scroll-padding-inline:var(--pad-fila);scrollbar-width:none}
+.carrusel-ventana::-webkit-scrollbar{display:none}
+.carrusel-fila{display:flex;gap:24px;width:max-content;padding:4px var(--pad-fila)}
+.carrusel .cat{flex:0 0 var(--card-w);scroll-snap-align:start}
+.grupo-sep{flex:0 0 auto;width:clamp(150px,18vw,260px);border-left:1px solid var(--hierro);padding-left:clamp(16px,2vw,24px);scroll-snap-align:start}
+.grupo-sep h3{font-size:clamp(32px,3.4vw,48px);font-weight:800;line-height:.95}
+@media (max-width:1023px){
+  .carrusel-fila{gap:16px}
+  .carrusel .cat{flex-basis:min(66vw,300px)}
+  /* En pantallas chicas el título del grupo va girado junto a la línea, para que entre la tarjeta */
+  .grupo-sep{width:auto;padding-left:12px}
+  .grupo-sep h3{writing-mode:vertical-rl;transform:rotate(180deg);font-size:30px;white-space:nowrap}
+}
+.carrusel-progreso{height:2px;background:var(--hierro);overflow:hidden}
+.carrusel-progreso span{display:block;height:100%;background:var(--brasa);transform:scaleX(0);transform-origin:left}
+.carrusel-activo .carrusel-pista{position:sticky;top:68px;height:calc(100vh - 68px);overflow:hidden}
+.carrusel-activo .carrusel-ventana{overflow:hidden;overflow:clip;scroll-snap-type:none}
+.carrusel-activo .carrusel-fila{will-change:transform}
+@media (min-width:1024px) and (prefers-reduced-motion:reduce){
+  .carrusel-fila{display:grid;grid-template-columns:repeat(30,minmax(0,1fr));row-gap:32px;width:auto;padding-inline:calc(var(--pad-fila) - 10px)}
+  .grupo-sep{grid-column:1/-1;width:auto;margin-inline:10px;border-left:0;border-top:1px solid var(--hierro);padding:28px 0 0}
+  .grupo-sep h3{font-size:clamp(36px,4vw,52px)}
+  .carrusel .cat{grid-column:span 5;margin-inline:10px}
+  .carrusel .cat[data-grupo="parrilla"]{grid-column:span 6}
+  .carrusel-progreso{display:none}
+}
 .cat{display:grid;gap:14px;align-content:start;text-decoration:none;color:inherit}
 .cat .foto{aspect-ratio:4/5;transition:border-color .25s ease-out}
 .cat .foto::before{opacity:.5;transition:opacity .3s ease-out}
@@ -131,11 +193,11 @@ section{padding-block:clamp(72px,10vw,128px)}
 
 /* Pasos para elegir */
 .pasos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;counter-reset:paso}
-.paso{padding:28px 28px 8px 0;display:grid;gap:12px;align-content:start;border-top:2px solid var(--hierro);position:relative}
+.paso{padding:28px 28px 8px 0;display:grid;gap:12px;align-content:start;border-top:2px solid var(--linea,var(--hierro));position:relative}
 .paso+.paso{padding-left:28px}
 .paso::before{counter-increment:paso;content:"0" counter(paso);font-family:var(--mono);font-size:13px;color:var(--brasa)}
 .paso:first-child{border-top-color:var(--brasa)}
-.paso p{color:var(--humo);font-size:16px}
+.paso p{color:var(--texto-2,var(--humo));font-size:16px}
 @media (max-width:820px){.pasos{grid-template-columns:1fr}.paso+.paso{padding-left:0}}
 
 /* Por qué */

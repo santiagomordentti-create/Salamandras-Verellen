@@ -10,6 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800;900&family=Hanken+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="assets/styles.css">
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 
@@ -44,7 +45,7 @@
     })();
     </script>
     <div class="wrap">
-      <h1>El calor que transforma una casa en un <em>hogar</em>.</h1>
+      <h1>El calor que transforma una casa en un <em class="encender">hogar</em>.</h1>
       <p class="lead">Más de 35 años fabricando salamandras. Hoy también parrillas, provoleteras, discos y hornos.</p>
       <div class="ctas">
         <a class="btn btn-fuego" href="https://wa.me/5492494595007?text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20productos." target="_blank" rel="noopener">Consultar por WhatsApp</a>
@@ -53,39 +54,34 @@
     </div>
   </section>
 
-  <section id="productos">
-    <div class="wrap">
-      <div class="cabeza rev">
-        <div class="titulo">
-          <h2>Productos</h2>
-          <p class="subtitulo">Nuestras líneas</p>
-        </div>
-      </div>
-
-      <div class="mundos">
-        <div class="mundo rev" id="calefaccion">
-          <h3>Calefacción</h3>
-          <div class="cats seis">
-            <a class="cat" href="/productos/salamandras"><div class="foto"><small>Salamandra en living</small></div><div class="cat-txt"><b>Salamandras <i>→</i></b><span>Líneas ST, Compact y M</span></div></a>
-            <a class="cat" href="/productos/hogares"><div class="foto"><small>Hogar empotrado</small></div><div class="cat-txt"><b>Hogares <i>→</i></b><span>En hierro y a medida</span></div></a>
-            <a class="cat" href="/productos/con-horno"><div class="foto"><small>Salamandra con horno</small></div><div class="cat-txt"><b>Con horno <i>→</i></b><span>Calefacciona y cocina</span></div></a>
-            <a class="cat" href="/productos/convectores/convectores"><div class="foto"><small>Convector revestido</small></div><div class="cat-txt"><b>Convectores <i>→</i></b><span>Para revestir, con recuperador</span></div></a>
-            <a class="cat" href="/productos/fogones"><div class="foto"><small>Fogón en el jardín</small></div><div class="cat-txt"><b>Fogones <i>→</i></b><span>Forgeron, 090 y 050</span></div></a>
-            <a class="cat" href="/productos/leneros"><div class="foto"><small>Leñero con ruedas</small></div><div class="cat-txt"><b>Leñeros <i>→</i></b><span>Grande con ruedas y chico</span></div></a>
-          </div>
-        </div>
-
-        <div class="mundo rev" id="parrilla">
-          <h3>Parrilla y accesorios</h3>
-          <div class="cats">
-            <a class="cat" href="/productos/parrillas"><div class="foto"><small>Parrilla Angus</small></div><div class="cat-txt"><b>Parrillas <i>→</i></b><span>Angus 850, 1100 y para revestir</span></div></a>
-            <a class="cat" href="/productos/provoleteras"><div class="foto"><small>Provoletera en brasa</small></div><div class="cat-txt"><b><span>Provoleteras <span class="nuevo">NUEVO</span></span> <i>→</i></b><span>[Modelos y medidas]</span></div></a>
-            <a class="cat" href="/productos/discos"><div class="foto"><small>Disco de arado</small></div><div class="cat-txt"><b><span>Discos <span class="nuevo">NUEVO</span></span> <i>→</i></b><span>[Modelos y medidas]</span></div></a>
-            <a class="cat" href="/productos/hornos"><div class="foto"><small>Horno Brasato</small></div><div class="cat-txt"><b>Hornos <i>→</i></b><span>Empotrables y Brasato</span></div></a>
-            <a class="cat" href="/productos/planchetas"><div class="foto"><small>Plancheta sobre la parrilla</small></div><div class="cat-txt"><b>Planchetas <i>→</i></b><span>Para la parrilla Angus</span></div></a>
+  <section id="productos" class="carrusel" aria-labelledby="productos-titulo">
+    <div class="carrusel-pista">
+      <div class="wrap">
+        <div class="cabeza rev">
+          <div class="titulo">
+            <h2 class="encender" id="productos-titulo">Productos</h2>
+            <p class="subtitulo">Nuestras líneas</p>
           </div>
         </div>
       </div>
+      <div class="carrusel-ventana">
+        <div class="carrusel-fila">
+          <div class="grupo-sep" id="calefaccion"><h3>Calefacción</h3></div>
+            <a class="cat" data-grupo="calefaccion" href="/productos/salamandras"><div class="foto"><small>Salamandra en living</small></div><div class="cat-txt"><b>Salamandras <i>→</i></b><span>Líneas ST, Compact y M</span></div></a>
+            <a class="cat" data-grupo="calefaccion" href="/productos/hogares"><div class="foto"><small>Hogar empotrado</small></div><div class="cat-txt"><b>Hogares <i>→</i></b><span>En hierro y a medida</span></div></a>
+            <a class="cat" data-grupo="calefaccion" href="/productos/con-horno"><div class="foto"><small>Salamandra con horno</small></div><div class="cat-txt"><b>Con horno <i>→</i></b><span>Calefacciona y cocina</span></div></a>
+            <a class="cat" data-grupo="calefaccion" href="/productos/convectores/convectores"><div class="foto"><small>Convector revestido</small></div><div class="cat-txt"><b>Convectores <i>→</i></b><span>Para revestir, con recuperador</span></div></a>
+            <a class="cat" data-grupo="calefaccion" href="/productos/fogones"><div class="foto"><small>Fogón en el jardín</small></div><div class="cat-txt"><b>Fogones <i>→</i></b><span>Forgeron, 090 y 050</span></div></a>
+            <a class="cat" data-grupo="calefaccion" href="/productos/leneros"><div class="foto"><small>Leñero con ruedas</small></div><div class="cat-txt"><b>Leñeros <i>→</i></b><span>Grande con ruedas y chico</span></div></a>
+          <div class="grupo-sep" id="parrilla"><h3>Parrilla y accesorios</h3></div>
+            <a class="cat" data-grupo="parrilla" href="/productos/parrillas"><div class="foto"><small>Parrilla Angus</small></div><div class="cat-txt"><b>Parrillas <i>→</i></b><span>Angus 850, 1100 y para revestir</span></div></a>
+            <a class="cat" data-grupo="parrilla" href="/productos/provoleteras"><div class="foto"><small>Provoletera en brasa</small></div><div class="cat-txt"><b><span>Provoleteras <span class="nuevo">NUEVO</span></span> <i>→</i></b><span>[Modelos y medidas]</span></div></a>
+            <a class="cat" data-grupo="parrilla" href="/productos/discos"><div class="foto"><small>Disco de arado</small></div><div class="cat-txt"><b><span>Discos <span class="nuevo">NUEVO</span></span> <i>→</i></b><span>[Modelos y medidas]</span></div></a>
+            <a class="cat" data-grupo="parrilla" href="/productos/hornos"><div class="foto"><small>Horno Brasato</small></div><div class="cat-txt"><b>Hornos <i>→</i></b><span>Empotrables y Brasato</span></div></a>
+            <a class="cat" data-grupo="parrilla" href="/productos/planchetas"><div class="foto"><small>Plancheta sobre la parrilla</small></div><div class="cat-txt"><b>Planchetas <i>→</i></b><span>Para la parrilla Angus</span></div></a>
+        </div>
+      </div>
+      <div class="wrap"><div class="carrusel-progreso" aria-hidden="true"><span></span></div></div>
     </div>
   </section>
 
@@ -112,11 +108,11 @@
     </div>
   </section>
 
-  <section id="elegir">
+  <section id="elegir" class="seccion-clara">
     <div class="wrap">
       <div class="cabeza rev">
         <div class="titulo">
-          <h2>Cómo elegir</h2>
+          <h2 class="encender">Cómo elegir</h2>
           <p class="subtitulo">Tres cosas antes de comprar.</p>
         </div>
       </div>
@@ -128,11 +124,11 @@
     </div>
   </section>
 
-  <section id="por-que" style="padding-top:0">
+  <section id="por-que">
     <div class="wrap">
       <div class="cabeza rev">
         <div class="titulo">
-          <h2>Por qué Verellen</h2>
+          <h2 class="encender">Por qué Verellen</h2>
           <p class="subtitulo">Calidad, durabilidad y diseño.</p>
         </div>
       </div>
@@ -149,7 +145,7 @@
     <div class="wrap insta">
       <div class="insta-txt rev">
         <div class="titulo">
-          <h2>Instalación y terminaciones</h2>
+          <h2 class="encender">Instalación y terminaciones</h2>
           <p class="subtitulo">La colocamos y queda lista.</p>
         </div>
         <p class="lead">La instalación la hacen especialistas: buscamos el mejor lugar del ambiente, hacemos la salida de humos y la conectamos. En poco tiempo tenés calefacción y un mueble que queda lindo en la casa.</p>
@@ -171,7 +167,7 @@
       <p class="anio rev" aria-hidden="true">1987</p>
       <div class="txt rev">
         <div class="titulo">
-          <h2>Nosotros</h2>
+          <h2 class="encender">Nosotros</h2>
           <p class="subtitulo">Una historia, un legado.</p>
         </div>
         <p class="lead">Desde 1987 fabricamos salamandras, hogares, hornos y recuperadores de calor en Tandil. Lo que empezó como un taller hoy es una marca que llega a casas de todo el país, y que sumó parrillas, fogones, provoleteras y discos sin cambiar la forma de trabajar: hierro, oficio y la misma gente.</p>
@@ -184,7 +180,7 @@
     <div class="wrap contacto-grid">
       <div style="display:grid;gap:22px;align-content:start" class="rev">
         <div class="titulo">
-          <h2>Contacto</h2>
+          <h2 class="encender">Contacto</h2>
           <p class="subtitulo">Escribinos y te asesoramos.</p>
         </div>
         <p class="lead">Escribinos con los metros del ambiente o el producto que te interesa y te respondemos con modelos y precios.</p>
@@ -229,15 +225,91 @@
 
 <script>
 (function(){
-  document.documentElement.classList.add('js');
+  var hayIO='IntersectionObserver' in window;
+
   // Entrada suave de secciones
   var els=document.querySelectorAll('.rev');
-  if('IntersectionObserver' in window){
+  if(hayIO){
     var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target);}})},{rootMargin:'0px 0px -8% 0px'});
     els.forEach(function(el){io.observe(el)});
     // Lo que ya está en pantalla se muestra enseguida
     setTimeout(function(){els.forEach(function(el){if(el.getBoundingClientRect().top<innerHeight)el.classList.add('vis')})},50);
   } else { els.forEach(function(el){el.classList.add('vis')}); }
+
+  // Títulos Brasa: se encienden una sola vez al entrar en pantalla
+  var titulos=document.querySelectorAll('.encender');
+  if(hayIO){
+    var ioT=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('encendido');ioT.unobserve(e.target);}})},{threshold:.4});
+    titulos.forEach(function(t){ioT.observe(t)});
+  } else { titulos.forEach(function(t){t.classList.add('encendido')}); }
+
+  // Productos: carrusel horizontal que avanza con el scroll en escritorio
+  var sec=document.getElementById('productos');
+  if(!sec) return;
+  var pista=sec.querySelector('.carrusel-pista'), ventana=sec.querySelector('.carrusel-ventana'),
+      fila=sec.querySelector('.carrusel-fila'), barra=sec.querySelector('.carrusel-progreso span');
+  var mq=matchMedia('(min-width:1024px) and (min-height:640px) and (prefers-reduced-motion:no-preference)');
+  var activo=false, recorrido=0, inicio=0, pendiente=0;
+
+  function arriba(){ return document.querySelector('.nav').offsetHeight; }
+  function limitar(p){ return Math.min(1,Math.max(0,p)); }
+  function pintar(){
+    pendiente=0;
+    var p=recorrido?limitar((scrollY-inicio)/recorrido):0;
+    fila.style.transform='translate3d('+(-p*recorrido).toFixed(1)+'px,0,0)';
+    barra.style.transform='scaleX('+p.toFixed(4)+')';
+  }
+  function medir(){
+    activo=mq.matches;
+    sec.classList.toggle('carrusel-activo',activo);
+    if(!activo){ sec.style.height=''; fila.style.transform=''; deslizar(); return; }
+    // La sección mide lo que ocupa la pista fija más el recorrido horizontal: 1px de scroll = 1px de desplazamiento
+    recorrido=Math.max(0,fila.scrollWidth-ventana.clientWidth);
+    sec.style.height=(pista.offsetHeight+recorrido)+'px';
+    inicio=sec.getBoundingClientRect().top+scrollY-arriba();
+    pintar();
+  }
+  // Celular y tablet: la barra sigue al deslizamiento con el dedo
+  function deslizar(){
+    var max=ventana.scrollWidth-ventana.clientWidth;
+    barra.style.transform='scaleX('+(max>0?limitar(ventana.scrollLeft/max):0).toFixed(4)+')';
+  }
+  // Lleva el scroll de la página al punto en que se ve un elemento de la fila (Tab y links a #calefaccion / #parrilla)
+  function mostrar(el){
+    if(!activo){
+      ventana.scrollLeft+=el.getBoundingClientRect().left-ventana.getBoundingClientRect().left-parseFloat(getComputedStyle(fila).paddingLeft);
+      return;
+    }
+    var x=el.offsetLeft-parseFloat(getComputedStyle(fila).paddingLeft);
+    var p=recorrido?limitar(x/recorrido):0;
+    var antes=document.documentElement.style.scrollBehavior;
+    document.documentElement.style.scrollBehavior='auto';
+    scrollTo(0,Math.round(inicio+p*recorrido));
+    document.documentElement.style.scrollBehavior=antes;
+    pintar();
+  }
+
+  addEventListener('scroll',function(){ if(activo&&!pendiente) pendiente=requestAnimationFrame(pintar); },{passive:true});
+  ventana.addEventListener('scroll',function(){ if(!activo) deslizar(); },{passive:true});
+  var espera; addEventListener('resize',function(){ clearTimeout(espera); espera=setTimeout(medir,120); });
+  (mq.addEventListener?mq.addEventListener('change',medir):mq.addListener(medir));
+  addEventListener('load',medir);
+  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(medir);
+  fila.addEventListener('focusin',function(e){
+    var el=e.target.closest('.cat'); if(!el||!activo) return;
+    // Después del scroll propio del navegador al enfocar, que si no pisa este
+    setTimeout(function(){
+      var r=el.getBoundingClientRect();
+      if(r.left<0||r.right>innerWidth) mostrar(el);
+    },0);
+  });
+  function irAlGrupo(){
+    var g=location.hash&&fila.querySelector(location.hash.replace(/[^#\w-]/g,''));
+    if(g&&g.classList.contains('grupo-sep')) mostrar(g);
+  }
+  addEventListener('hashchange',irAlGrupo);
+  medir();
+  addEventListener('load',function(){ setTimeout(irAlGrupo,0); });
 })();
 </script>
 </body>
