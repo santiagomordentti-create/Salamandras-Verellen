@@ -248,7 +248,7 @@ footer{border-top:1px solid var(--hierro)}
 .pie-links a{display:inline-flex;align-items:center;min-height:44px;color:var(--ceniza);font-size:15px;font-weight:600;text-decoration:none;transition:color .2s}
 .pie-links a:hover{color:var(--brasa)}
 @media (max-width:760px){.pie-fila{flex-direction:column;justify-content:center;text-align:center;gap:12px}}
-.pie-credito{border-top:1px solid var(--hierro);background:var(--hollin);padding:16px 0 calc(16px + env(safe-area-inset-bottom,0px));text-align:center}
+.pie-credito{border-top:1px solid var(--hierro);background:var(--carbon);padding:16px 0 calc(16px + env(safe-area-inset-bottom,0px));text-align:center}
 .pie-credito-label{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--humo)}
 .pie-credito-nombre{margin-top:2px;font-style:italic;color:var(--ceniza)}
 /* padding y margin negativos iguales: el área táctil llega a 44px sin mover el texto */
