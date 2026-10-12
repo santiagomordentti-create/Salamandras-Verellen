@@ -231,7 +231,10 @@
 
     var fichas = p.descargas.filter(function (d) { return d.tipo === 'ficha-tecnica'; });
     var botones = '<a class="btn btn-fuego" href="' + wa('Hola! Quisiera consultar por ' + art + ' ' + nombreConsulta + '.') +
-      '" target="_blank" rel="noopener">Consultar por ' + art + ' ' + esc(nombreConsulta) + '</a>' +
+      // Con nombres largos el botón no entra en un renglón en celular: ahí dice "Consultar por WhatsApp"
+      '" target="_blank" rel="noopener">' + (nombreConsulta.length > 16
+        ? '<span class="btn-largo">Consultar por ' + art + ' ' + esc(nombreConsulta) + '</span><span class="btn-corto">Consultar por WhatsApp</span>'
+        : 'Consultar por ' + art + ' ' + esc(nombreConsulta)) + '</a>' +
       fichas.concat(p.descargas.filter(function (d) { return d.tipo !== 'ficha-tecnica'; })).map(function (d) {
         var texto = d.tipo === 'manual' ? 'Descargar manual'
           : fichas.length > 1 ? 'Ficha técnica ' + (d.titulo.match(/\d+\.\d+\s*$/) || [''])[0] : 'Descargar ficha técnica';
