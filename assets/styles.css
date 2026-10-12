@@ -42,9 +42,20 @@ p{margin:0}
 /* Nav */
 .nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(21,17,14,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(238,230,220,.07)}
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:68px}
-.logo{display:flex;flex-direction:column;text-decoration:none;line-height:1;flex:none;white-space:nowrap}
-.logo b{font-family:var(--display);font-weight:900;font-size:28px;letter-spacing:.06em}
-.logo span{font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--humo);text-transform:uppercase;margin-top:3px}
+/* Logo: símbolo (círculo con llama) + "Salamandras / Verellen". El círculo toma el color del texto (currentColor) */
+.logo{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ceniza);flex:none;white-space:nowrap}
+.logo-icono{display:block;width:40px;height:40px;flex:none}
+.logo-texto{display:flex;flex-direction:column;text-align:left;font-family:var(--display);font-weight:800;font-size:20px;line-height:.9;text-transform:uppercase}
+footer .logo-icono{width:48px;height:48px}
+footer .logo-texto{font-size:24px}
+@media (max-width:419px){.nav .logo-icono{width:34px;height:34px}.nav .logo-texto{font-size:17px}}
+/* La llama crece desde su base (fill-box: el origen se mide sobre la llama, no sobre todo el SVG) */
+@keyframes llama{0%,100%{transform:scaleY(1) scaleX(1) skewX(0)}25%{transform:scaleY(1.07) scaleX(.96) skewX(-2deg)}50%{transform:scaleY(.95) scaleX(1.03) skewX(1.5deg)}75%{transform:scaleY(1.04) scaleX(.98) skewX(-1deg)}}
+@keyframes llama-centro{0%,100%{opacity:1;transform:scaleY(1)}50%{opacity:.75;transform:scaleY(.9)}}
+.logo-icono .llama,.logo-icono .llama-centro{transform-box:fill-box;transform-origin:50% 92%}
+.logo-icono .llama{animation:llama 1.6s ease-in-out infinite}
+.logo-icono .llama-centro{animation:llama-centro 1.1s ease-in-out infinite}
+@media (prefers-reduced-motion:reduce){.logo-icono .llama,.logo-icono .llama-centro{animation:none}}
 .nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0}
 .nav ul a{text-decoration:none;font-size:15px;color:var(--humo);transition:color .2s;white-space:nowrap}
 .nav ul a:hover{color:var(--ceniza)}
