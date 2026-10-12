@@ -1,0 +1,7 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/productos/:categoria", "destination": "/categoria.html" },
+    { "source": "/productos/:categoria/:modelo", "destination": "/producto.html" }
+  ]
+}
