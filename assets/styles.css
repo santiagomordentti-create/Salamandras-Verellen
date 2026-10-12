@@ -205,7 +205,6 @@ section{padding-block:clamp(72px,10vw,128px)}
 /* Historia */
 .historia{display:grid;grid-template-columns:minmax(0,auto) minmax(0,1fr);gap:clamp(24px,5vw,80px);align-items:center}
 .anio{font-family:var(--display);font-weight:900;font-size:clamp(110px,22vw,300px);line-height:.8;color:transparent;-webkit-text-stroke:1.5px var(--brasa)}
-.seccion-clara .anio{-webkit-text-stroke-width:2px}
 .historia .txt{display:grid;gap:18px}
 @media (max-width:760px){.historia{grid-template-columns:1fr}}
 
