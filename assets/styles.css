@@ -85,7 +85,7 @@ section{padding-block:clamp(72px,10vw,128px)}
 .titulo{display:grid;gap:10px}
 .titulo h2{font-size:clamp(56px,8vw,104px);color:var(--brasa)}
 .subtitulo{font-family:var(--display);font-weight:800;font-size:clamp(32px,4.6vw,60px);line-height:.95;text-transform:uppercase;color:var(--ceniza);text-wrap:balance}
-#por-que,.grupo-sep[id]{scroll-margin-top:clamp(72px,8vw,110px)}
+#por-que,.mundo[id]{scroll-margin-top:clamp(72px,8vw,110px)}
 
 /* Títulos Brasa: degradado de carbonizado a ámbar recortado al texto, con motitas chamuscadas encima.
    Sin soporte de background-clip:text quedan en naranja sólido (el color de arriba). */
@@ -128,40 +128,8 @@ section{padding-block:clamp(72px,10vw,128px)}
 @media (max-width:1200px){.cats{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (max-width:760px){.cats{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}}
 /* Grupo de 6 tarjetas: 6 columnas en pantallas grandes y 3 hasta tablet, para que no quede una sola en la segunda fila */
-
-/* Productos de la home: carrusel horizontal.
-   Escritorio (≥1024px y ≥640px de alto): el JS pone .carrusel-activo; la pista queda sticky y la fila se corre con el scroll.
-   Más chico: la fila se desliza con el dedo. Escritorio con menos movimiento: la grilla de siempre. */
-.carrusel{--card-w:clamp(200px,calc(62vh - 250px),340px);padding-block:0}
-.carrusel-pista{display:flex;flex-direction:column;justify-content:center;gap:clamp(24px,4vh,48px);padding-block:clamp(48px,7vh,96px)}
-.carrusel .cabeza{margin-bottom:0}
-.carrusel-pista>.wrap{width:100%}
-.carrusel-ventana{--pad-fila:max(var(--gutter),calc((100% - var(--max)) / 2 + var(--gutter)));overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scroll-padding-inline:var(--pad-fila);scrollbar-width:none}
-.carrusel-ventana::-webkit-scrollbar{display:none}
-.carrusel-fila{display:flex;gap:24px;width:max-content;padding:4px var(--pad-fila)}
-.carrusel .cat{flex:0 0 var(--card-w);scroll-snap-align:start}
-.grupo-sep{flex:0 0 auto;width:clamp(150px,18vw,260px);border-left:1px solid var(--hierro);padding-left:clamp(16px,2vw,24px);scroll-snap-align:start}
-.grupo-sep h3{font-size:clamp(32px,3.4vw,48px);font-weight:800;line-height:.95}
-@media (max-width:1023px){
-  .carrusel-fila{gap:16px}
-  .carrusel .cat{flex-basis:min(66vw,300px)}
-  /* En pantallas chicas el título del grupo va girado junto a la línea, para que entre la tarjeta */
-  .grupo-sep{width:auto;padding-left:12px}
-  .grupo-sep h3{writing-mode:vertical-rl;transform:rotate(180deg);font-size:30px;white-space:nowrap}
-}
-.carrusel-progreso{height:2px;background:var(--hierro);overflow:hidden}
-.carrusel-progreso span{display:block;height:100%;background:var(--brasa);transform:scaleX(0);transform-origin:left}
-.carrusel-activo .carrusel-pista{position:sticky;top:68px;height:calc(100vh - 68px);overflow:hidden}
-.carrusel-activo .carrusel-ventana{overflow:hidden;overflow:clip;scroll-snap-type:none}
-.carrusel-activo .carrusel-fila{will-change:transform}
-@media (min-width:1024px) and (prefers-reduced-motion:reduce){
-  .carrusel-fila{display:grid;grid-template-columns:repeat(30,minmax(0,1fr));row-gap:32px;width:auto;padding-inline:calc(var(--pad-fila) - 10px)}
-  .grupo-sep{grid-column:1/-1;width:auto;margin-inline:10px;border-left:0;border-top:1px solid var(--hierro);padding:28px 0 0}
-  .grupo-sep h3{font-size:clamp(36px,4vw,52px)}
-  .carrusel .cat{grid-column:span 5;margin-inline:10px}
-  .carrusel .cat[data-grupo="parrilla"]{grid-column:span 6}
-  .carrusel-progreso{display:none}
-}
+@media (min-width:1281px){.cats.seis{grid-template-columns:repeat(6,minmax(0,1fr))}}
+@media (min-width:761px) and (max-width:1280px){.cats.seis{grid-template-columns:repeat(3,minmax(0,1fr))}}
 .cat{display:grid;gap:14px;align-content:start;text-decoration:none;color:inherit}
 .cat .foto{aspect-ratio:4/5;transition:border-color .25s ease-out}
 .cat .foto::before{opacity:.5;transition:opacity .3s ease-out}
