@@ -93,9 +93,9 @@ section{padding-block:clamp(72px,10vw,128px)}
   .titulo h2,.titulo h1,.hero h1 em{color:transparent;-webkit-text-fill-color:transparent;
     background-image:url(textura-quemado.svg),linear-gradient(180deg,var(--brasa-1) 0%,var(--brasa-2) 55%,var(--brasa-3) 100%);
     background-size:300px 300px,100% 100%;background-repeat:repeat,no-repeat;-webkit-background-clip:text;background-clip:text;
-    /* El fondo solo pinta dentro de la caja: con line-height .92 las tildes (Ó, É) quedan afuera y desaparecen.
+    /* El fondo solo pinta dentro de la caja: con line-height .92 las tildes (Ó, É) y el pie del "¿" quedan afuera y desaparecen.
        El padding agranda la caja y el margen negativo lo compensa, así no se mueve nada */
-    padding-block:.14em .06em;margin-block:-.14em -.06em}
+    padding-block:.14em .2em;margin-block:-.14em -.2em}
   /* Encendido (solo en la home, .encender): el degradado mide 300% de alto; arriba está apagado y abajo encendido.
      Sin JS o con menos movimiento no aplica y el título se ve encendido desde el principio. */
   @media (prefers-reduced-motion:no-preference){
@@ -112,9 +112,8 @@ section{padding-block:clamp(72px,10vw,128px)}
 .seccion-clara .subtitulo,.seccion-clara h3{color:var(--texto)}
 .seccion-clara .lead{color:var(--texto-2)}
 .seccion-clara :focus-visible{outline-color:var(--carbon)}
-.seccion-clara .cat-txt>span,.seccion-clara .canal span{color:var(--texto-2)}
+.seccion-clara .cat-txt>span{color:var(--texto-2)}
 .seccion-clara .pendiente{color:var(--pendiente)}
-.seccion-clara .canal a:hover{color:var(--pendiente)}
 /* Placeholders de foto en versión clara: un paso más oscuros que la sección, rayas en carbón y resplandor tenue */
 .seccion-clara .foto{background-color:#E2D8CB;background-image:repeating-linear-gradient(135deg,rgba(21,17,14,.06) 0 1px,transparent 1px 14px);border-color:rgba(21,17,14,.2)}
 .seccion-clara .foto::before{background:radial-gradient(circle,rgba(232,116,44,.14),transparent 65%)}
@@ -202,20 +201,36 @@ section{padding-block:clamp(72px,10vw,128px)}
 /* Historia */
 .historia{display:grid;grid-template-columns:minmax(0,auto) minmax(0,1fr);gap:clamp(24px,5vw,80px);align-items:center}
 .anio{font-family:var(--display);font-weight:900;font-size:clamp(110px,22vw,300px);line-height:.8;color:transparent;-webkit-text-stroke:1.5px var(--brasa)}
+.seccion-clara .anio{-webkit-text-stroke-width:2px}
 .historia .txt{display:grid;gap:18px}
 @media (max-width:760px){.historia{grid-template-columns:1fr}}
 
 /* Contacto */
-.contacto{background:radial-gradient(120% 90% at 85% 110%,rgba(232,116,44,.28),transparent 60%),var(--hollin);border-top:1px solid var(--hierro)}
-.contacto.seccion-clara{background:radial-gradient(50% 60% at 100% 100%,rgba(232,116,44,.12),transparent 70%),var(--ceniza);border-top:0}
-.contacto-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:clamp(40px,6vw,96px)}
-@media (max-width:860px){.contacto-grid{grid-template-columns:1fr}}
-.canales{display:grid;gap:0;align-content:start}
-.canal{display:grid;gap:4px;padding:18px 0;border-bottom:1px solid var(--linea,var(--hierro))}
-.canal:first-child{border-top:1px solid var(--linea,var(--hierro))}
-.canal span{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--humo)}
-.canal a,.canal p{font-size:19px;text-decoration:none;word-break:break-word}
-.canal a:hover{color:var(--ambar)}
+/* Contacto: cierre oscuro, centrado, con resplandor desde abajo y chispas que suben */
+.contacto{position:relative;overflow:hidden;isolation:isolate;padding-block:clamp(96px,14vw,180px);background:radial-gradient(circle at 50% 130%,rgba(232,116,44,.5),transparent 60%),var(--carbon)}
+.cierre{display:grid;justify-items:center;text-align:center}
+.cierre .titulo h2{font-size:clamp(64px,11vw,150px)}
+.cierre-bajada{color:var(--humo);max-width:48ch;margin-top:24px;font-size:18px}
+.btn-grande{margin-top:36px;padding:20px 36px;min-height:64px;font-size:19px;gap:12px;white-space:nowrap}
+@media (max-width:400px){.btn-grande{padding:18px 24px;font-size:18px}}
+.btn-grande svg{width:24px;height:24px}
+.canales-fila{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 0;list-style:none;margin:32px 0 0;padding:0}
+.canales-fila li{display:flex;align-items:center;white-space:nowrap;font-size:16px;color:var(--ceniza)}
+.canales-fila li+li::before{content:"·";color:var(--hierro);margin-inline:16px;font-weight:700}
+.canales-fila a,.canales-fila span{display:inline-flex;align-items:center;gap:8px;min-height:44px;color:inherit;text-decoration:none;transition:color .2s}
+.canales-fila a:hover{color:var(--ambar)}
+.canales-fila svg{width:18px;height:18px;flex:none;color:var(--brasa)}
+/* En celular los ítems pasan a dos filas: sin puntos, que quedarían colgando al principio de la fila */
+@media (max-width:600px){.canales-fila{gap:4px 22px}.canales-fila li+li::before{content:none}}
+.cierre-pendientes{margin-top:20px;font-family:var(--mono);font-size:12px;color:var(--humo)}
+.cierre-pendientes .pendiente{font-size:inherit}
+.cierre-pendientes>span{white-space:nowrap}
+.aviso{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));z-index:40;margin:0;padding:10px 16px;border-radius:2px;background:var(--ceniza);color:var(--carbon);font-size:14px;font-weight:600;opacity:0;pointer-events:none;transform:translate(-50%,8px);transition:opacity .2s ease-out,transform .2s ease-out}
+.aviso.visible{opacity:1;transform:translate(-50%,0)}
+.chispas{position:absolute;inset:0;z-index:-1;pointer-events:none}
+.chispas span{position:absolute;bottom:-8px;left:var(--x);width:3px;height:3px;border-radius:50%;background:var(--ambar);box-shadow:0 0 6px 1px rgba(244,176,79,.55);opacity:0;animation:chispa var(--d) linear var(--r) infinite}
+@keyframes chispa{0%{transform:translate(0,0);opacity:0}12%{opacity:.7}100%{transform:translate(var(--dx),-420px);opacity:0}}
+@media (prefers-reduced-motion:reduce){.chispas{display:none}}
 .pendiente{color:var(--ambar);font-family:var(--mono);font-size:13px}
 
 /* Footer: fila con logo, copyright y links, y abajo la franja de crédito (misma estructura que HRK Sports) */
