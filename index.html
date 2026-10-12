@@ -247,6 +247,26 @@
     titulos.forEach(function(t){ioT.observe(t)});
   } else { titulos.forEach(function(t){t.classList.add('encendido')}); }
 
+  // Nav: marca la sección que ocupa el centro de la pantalla (en el hero no hay ninguna)
+  var links={};
+  document.querySelectorAll('.nav ul a[href^="/#"]').forEach(function(a){ links[a.getAttribute('href').slice(2)]=a; });
+  var enCentro=null;
+  function marcar(id){
+    Object.keys(links).forEach(function(k){
+      if(k===id) links[k].setAttribute('aria-current','true'); else links[k].removeAttribute('aria-current');
+    });
+  }
+  if(hayIO){
+    var ioNav=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting) enCentro=e.target.id;
+        else if(enCentro===e.target.id) enCentro=null;
+      });
+      marcar(enCentro);
+    },{rootMargin:'-50% 0px -50% 0px'});
+    Object.keys(links).forEach(function(id){ var s=document.getElementById(id); if(s) ioNav.observe(s); });
+  }
+
   // Mail de Contacto: lo copia y avisa; sin permiso de portapapeles sigue el link mailto
   var aviso=document.querySelector('.aviso'), espera;
   document.querySelectorAll('[data-copiar]').forEach(function(a){
