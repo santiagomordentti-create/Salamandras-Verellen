@@ -160,8 +160,24 @@ section{padding-block:clamp(72px,10vw,128px)}
 .canal a:hover{color:var(--ambar)}
 .pendiente{color:var(--ambar);font-family:var(--mono);font-size:13px}
 
-footer{padding-block:32px calc(32px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--hierro);color:var(--humo);font-size:14px}
-footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+/* Footer: fila con logo, copyright y links, y abajo la franja de crédito (misma estructura que HRK Sports) */
+footer{border-top:1px solid var(--hierro)}
+.pie-fila{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-block:28px}
+.pie-copy{color:var(--humo);font-size:14px;text-align:center}
+.pie-links{display:flex;gap:20px}
+.pie-links a{display:inline-flex;align-items:center;min-height:44px;color:var(--ceniza);font-size:15px;font-weight:600;text-decoration:none;transition:color .2s}
+.pie-links a:hover{color:var(--brasa)}
+@media (max-width:760px){.pie-fila{flex-direction:column;justify-content:center;text-align:center;gap:12px}}
+.pie-credito{border-top:1px solid var(--hierro);background:var(--hollin);padding:16px 0 calc(16px + env(safe-area-inset-bottom,0px));text-align:center}
+.pie-credito-label{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--humo)}
+.pie-credito-nombre{margin-top:2px;font-style:italic;color:var(--ceniza)}
+/* padding y margin negativos iguales: el área táctil llega a 44px sin mover el texto */
+.pie-credito-nombre a{display:inline-block;padding:10px 4px;margin:-10px -4px;color:inherit;text-decoration:none;transition:color .2s}
+.pie-credito-nombre .nombre{text-decoration:underline;text-underline-offset:3px}
+.pie-credito-nombre .raya{color:var(--brasa)}
+.pie-credito-nombre a:hover{color:var(--brasa)}
+/* En celular el WhatsApp flotante (56px + 16px de margen) queda debajo del crédito, sin taparlo */
+@media (max-width:760px){.pie-credito{padding-bottom:calc(88px + env(safe-area-inset-bottom,0px))}}
 
 /* WhatsApp flotante (mobile) */
 .wa-flot{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;width:56px;height:56px;border-radius:50%;background:var(--brasa);color:#1A0F07;display:none;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,.45)}
