@@ -210,8 +210,8 @@ section{padding-block:clamp(72px,10vw,128px)}
 .contacto{position:relative;overflow:hidden;isolation:isolate;padding-block:clamp(96px,14vw,180px);background:radial-gradient(circle at 50% 130%,rgba(232,116,44,.5),transparent 60%),var(--carbon)}
 .cierre{display:grid;justify-items:center;text-align:center}
 .cierre .titulo h2{font-size:clamp(64px,11vw,150px)}
-.cierre-bajada{color:var(--humo);max-width:48ch;margin-top:24px;font-size:18px}
-.btn-grande{margin-top:36px;padding:20px 36px;min-height:64px;font-size:19px;gap:12px;white-space:nowrap}
+.cierre-bajada{color:var(--ceniza);opacity:.85;max-width:48ch;margin-top:24px;font-size:19px;line-height:1.55}
+.btn-grande{margin-top:36px;padding:20px 36px;min-height:64px;font-size:19px;gap:12px;white-space:nowrap;border-radius:999px}
 @media (max-width:400px){.btn-grande{padding:18px 24px;font-size:18px}}
 .btn-grande svg{width:24px;height:24px}
 .canales-fila{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 0;list-style:none;margin:32px 0 0;padding:0}
@@ -222,6 +222,7 @@ section{padding-block:clamp(72px,10vw,128px)}
 .canales-fila svg{width:18px;height:18px;flex:none;color:var(--brasa)}
 /* En celular los ítems pasan a dos filas: sin puntos, que quedarían colgando al principio de la fila */
 @media (max-width:600px){.canales-fila{gap:4px 22px}.canales-fila li+li::before{content:none}}
+/* Línea de horarios y pagos: el HTML está comentado hasta tener los datos */
 .cierre-pendientes{margin-top:20px;font-family:var(--mono);font-size:12px;color:var(--humo)}
 .cierre-pendientes .pendiente{font-size:inherit}
 .cierre-pendientes>span{white-space:nowrap}
