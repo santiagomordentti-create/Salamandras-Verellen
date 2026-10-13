@@ -76,7 +76,9 @@ footer .logo-texto{font-size:24px}
 /* Hero */
 .hero{position:relative;overflow:hidden;isolation:isolate;border-bottom:1px solid var(--hierro);background:var(--carbon) url(hero-bg.jpg) 70% 80%/cover no-repeat}
 @media (max-width:759px){.hero{background-image:url(hero-bg-mobile.jpg)}}
-.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% 80%;z-index:-1}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% 80%;z-index:-1;pointer-events:none}
+/* Safari en iPhone: sin el botón de play nativo encima del video */
+.hero-video::-webkit-media-controls,.hero-video::-webkit-media-controls-start-playback-button{display:none!important;-webkit-appearance:none}
 @media (prefers-reduced-motion:reduce){.hero-video{display:none}}
 .hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(21,17,14,.92) 0%,rgba(21,17,14,.55) 50%,rgba(21,17,14,.15) 100%),linear-gradient(0deg,var(--carbon) 0%,transparent 35%)}
 .hero .wrap{padding-block:clamp(72px,12vw,150px) clamp(56px,8vw,96px);display:grid;gap:28px}

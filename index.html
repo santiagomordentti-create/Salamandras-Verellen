@@ -36,12 +36,17 @@
 
 <main id="inicio">
   <section class="hero" style="padding-block:0">
-    <video class="hero-video" src="assets/hero-loop.mp4" poster="assets/hero-bg.jpg" autoplay muted loop playsinline aria-hidden="true"></video>
+    <!-- Sin poster: mientras carga, o si no se puede reproducir, se ve la imagen de fondo del hero,
+         que el CSS elige según la pantalla (hero-bg.jpg o hero-bg-mobile.jpg) -->
+    <video class="hero-video" src="assets/hero-loop.mp4" autoplay muted loop playsinline preload="metadata" disablepictureinpicture disableremoteplayback aria-hidden="true"></video>
     <script>
-    // Poster vertical en celular; sin video si el usuario pidió menos movimiento
-    (function(){var v=document.currentScript.previousElementSibling,mq=window.matchMedia;if(!mq)return;
-      if(mq('(max-width: 759px)').matches)v.poster='assets/hero-bg-mobile.jpg';
-      if(mq('(prefers-reduced-motion: reduce)').matches){v.removeAttribute('autoplay');v.pause();v.removeAttribute('src');v.load();}
+    // Reproduce el video sin recargarlo. Si el navegador no deja (por ejemplo, iPhone en ahorro de batería)
+    // o se pidió menos movimiento, se oculta y queda la imagen de fondo
+    (function(){
+      var v=document.currentScript.previousElementSibling;
+      if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches){v.removeAttribute('autoplay');v.pause();v.hidden=true;return;}
+      v.muted=true;
+      try{var p=v.play();if(p&&p.catch)p.catch(function(){v.hidden=true;});}catch(e){v.hidden=true;}
     })();
     </script>
     <div class="wrap">
