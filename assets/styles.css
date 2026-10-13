@@ -165,8 +165,14 @@ section{padding-block:clamp(72px,10vw,128px)}
 .ficha{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,72px);align-items:center}
 @media (max-width:860px){.ficha{grid-template-columns:1fr}}
 .ficha-info{display:grid;gap:22px}
+.ficha .ficha-info{gap:18px}
 .modelo{font-family:var(--display);font-weight:900;font-size:clamp(72px,10vw,132px);line-height:.85;color:var(--ceniza)}
-.modelo small{display:block;font-family:var(--mono);font-weight:400;font-size:12px;letter-spacing:.14em;color:var(--ambar);margin-bottom:12px}
+/* Ficha destacada de la home: título Brasa, modelo y la línea de descripción debajo */
+.ficha-cabeza{gap:0}
+/* El margen descuenta el .2em de abajo que suman los títulos Brasa para no cortar letras */
+.ficha-cabeza .ficha-titulo{font-size:clamp(32px,3.4vw,48px);line-height:.9;margin-bottom:calc(8px - .2em)}
+.ficha-cabeza .modelo{font-size:clamp(65px,9vw,119px)}
+.modelo-sub{margin-top:12px;font-weight:500;font-size:16px;color:#CFC4B7}
 /* Datos clave: tres recuadros arriba de la tabla (valor grande y etiqueta debajo) */
 .destacados{display:grid;grid-template-columns:repeat(auto-fit,minmax(96px,1fr));gap:12px;margin:0}
 .destacados div{display:flex;flex-direction:column-reverse;align-items:center;justify-content:center;gap:6px;padding:16px;border-radius:8px;background:var(--hierro);text-align:center}
