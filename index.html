@@ -169,16 +169,41 @@
   </section>
 
   <section id="nosotros">
-    <div class="wrap historia">
-      <p class="anio rev" aria-hidden="true">1987</p>
-      <div class="txt rev">
+    <div class="wrap">
+      <div class="cabeza rev">
         <div class="titulo">
           <h2 class="encender">Nosotros</h2>
           <p class="subtitulo">Una historia, un legado.</p>
         </div>
-        <p class="lead">Desde 1987 fabricamos salamandras, hogares, hornos y recuperadores de calor en Tandil. Lo que empezó como un taller hoy es una marca que llega a casas de todo el país, y que sumó parrillas, fogones, provoleteras y discos sin cambiar la forma de trabajar: hierro, oficio y la misma gente.</p>
-        <p class="pendiente">[Foto del taller o de la familia Verellen]</p>
       </div>
+      <!-- Línea de tiempo: los puntos se ubican solos a la altura de su año (ver CSS de .hito-punto) -->
+      <ol class="historia-linea">
+        <li class="linea-trazo" aria-hidden="true"></li>
+        <li class="hito hito-intro">
+          <p class="hito-marca"><span class="hito-punto" aria-hidden="true"></span><span class="hito-anio-chico">1953</span></p>
+          <p class="hito-texto">La historia empieza antes de las salamandras. En 1953 el abuelo de la familia llegó a Tandil desde Bélgica, después de la guerra. Con el premio de un concurso de pintura que ganó su mujer, compró las primeras bolsas de cemento para fabricar ladrillos.</p>
+        </li>
+        <li class="hito hito-bloque">
+          <div class="hito-txt">
+            <p class="hito-marca"><span class="hito-punto" aria-hidden="true"></span><span class="anio">1986</span></p>
+            <p class="eyebrow">El fundador</p>
+            <h3 class="hito-nombre">Felipe Verellen</h3>
+            <p class="hito-texto">En una zona sin gas, cansado del frío y del humo de las salamandras de fundición, Felipe diseñó la suya, con un pulmón que hacía que el calor fuera parejo y sin humo. Funcionó tan bien que los vecinos y amigos empezaron a pedirle una. Así nació Salamandras Verellen.</p>
+          </div>
+          <!-- Cuando esté la foto real va como <img> dentro de este div: se muestra en blanco y negro (.foto-bn) -->
+          <div class="foto hito-foto foto-bn rev"><small>Foto de Felipe</small></div>
+        </li>
+        <li class="hito hito-bloque hito-invertido">
+          <div class="hito-txt">
+            <p class="hito-marca"><span class="hito-punto" aria-hidden="true"></span><span class="anio">Hoy</span></p>
+            <p class="eyebrow">Segunda generación</p>
+            <h3 class="hito-nombre">Nicolás Verellen</h3>
+            <p class="hito-texto">Nico empezó de abajo: barriendo el galpón y aprendiendo a soldar al lado de su papá. Hace más de veinte años que está al frente de la fábrica. Modernizó el taller y el diseño, siempre buscando el mejor fuego y cero humo, y sostuvo lo que aprendió en casa: trabajo, palabra y puntualidad.</p>
+          </div>
+          <div class="foto hito-foto rev"><small>Foto de Nico en el taller</small></div>
+        </li>
+      </ol>
+      <p class="historia-cierre rev">Desde la primera salamandra, nunca bajamos el espesor de la chapa.</p>
     </div>
   </section>
 
@@ -266,6 +291,35 @@
       marcar(enCentro);
     },{rootMargin:'-50% 0px -50% 0px'});
     Object.keys(links).forEach(function(id){ var s=document.getElementById(id); if(s) ioNav.observe(s); });
+  }
+
+  // Nosotros: la línea de tiempo se dibuja de arriba hacia abajo al scrollear, una sola vez
+  var linea=document.querySelector('.historia-linea');
+  if(linea){
+    var trazo=linea.querySelector('.linea-trazo'), puntos=linea.querySelectorAll('.hito-punto');
+    var animar=!matchMedia('(prefers-reduced-motion: reduce)').matches, avance=animar?0:1, pedido=0;
+    function medirLinea(){
+      // Va del centro del primer punto (1953) al del último (Hoy)
+      var a=puntos[0], b=puntos[puntos.length-1];
+      var ini=a.offsetTop+a.offsetHeight/2, fin=b.offsetTop+b.offsetHeight/2;
+      trazo.style.top=ini+'px'; trazo.style.height=(fin-ini)+'px';
+      dibujar();
+    }
+    function dibujar(){
+      pedido=0;
+      if(avance<1){
+        var r=trazo.getBoundingClientRect();
+        avance=Math.max(avance,Math.min(1,Math.max(0,(innerHeight*.6-r.top)/(r.height||1))));
+        if(avance>=1) removeEventListener('scroll',alScrollear);
+      }
+      trazo.style.transform='scaleY('+avance+')';
+    }
+    function alScrollear(){ if(!pedido) pedido=requestAnimationFrame(dibujar); }
+    if(avance<1) addEventListener('scroll',alScrollear,{passive:true});
+    addEventListener('resize',medirLinea);
+    addEventListener('load',medirLinea);
+    if(document.fonts&&document.fonts.ready) document.fonts.ready.then(medirLinea);
+    medirLinea();
   }
 
   // Mail de Contacto: lo copia y avisa; sin permiso de portapapeles sigue el link mailto

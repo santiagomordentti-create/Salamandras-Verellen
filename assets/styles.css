@@ -221,10 +221,31 @@ section{padding-block:clamp(72px,10vw,128px)}
 @media (max-width:860px){.galeria{grid-auto-rows:120px}}
 
 /* Historia */
-.historia{display:grid;grid-template-columns:minmax(0,auto) minmax(0,1fr);gap:clamp(24px,5vw,80px);align-items:center}
-.anio{font-family:var(--display);font-weight:900;font-size:clamp(110px,22vw,300px);line-height:.8;color:transparent;-webkit-text-stroke:1.5px var(--brasa)}
-.historia .txt{display:grid;gap:18px}
-@media (max-width:760px){.historia{grid-template-columns:1fr}}
+/* Nosotros: línea de tiempo. La línea va al costado izquierdo; cada punto toma la altura de su año
+   (posición absoluta sin top: queda donde estaría en el flujo, centrado en .hito-marca) */
+.anio{font-family:var(--display);font-weight:900;font-size:clamp(72px,9vw,128px);line-height:.8;color:transparent;-webkit-text-stroke:1.5px var(--brasa)}
+.historia-linea{--margen:clamp(28px,4vw,56px);position:relative;list-style:none;margin:0;padding:0 0 0 var(--margen);display:grid;gap:clamp(56px,8vw,112px)}
+.linea-trazo{position:absolute;left:5px;top:0;width:2px;height:100%;background:var(--brasa);transform-origin:top}
+.hito-marca{display:flex;align-items:center;margin:0 0 6px}
+.hito-marca .anio{line-height:1}
+.hito-punto{position:absolute;left:0;width:12px;height:12px;border-radius:50%;background:var(--brasa);box-shadow:0 0 0 4px var(--carbon)}
+.hito-anio-chico{font-family:var(--display);font-weight:800;font-size:32px;line-height:1;color:var(--brasa)}
+.hito-intro{display:grid;gap:12px;max-width:60ch}
+.hito-intro .hito-texto{color:var(--humo)}
+.hito-bloque{display:grid;grid-template-columns:minmax(0,60ch) minmax(0,380px);justify-content:start;gap:clamp(32px,5vw,72px);align-items:start}
+.hito-invertido{grid-template-columns:minmax(0,380px) minmax(0,60ch)}
+.hito-invertido .hito-txt{order:2}
+.hito-txt{display:grid;gap:14px;align-content:start;max-width:60ch}
+.hito-nombre{font-size:clamp(40px,5vw,64px);font-weight:800}
+.hito-texto{color:var(--humo);font-size:17px}
+.hito-foto{aspect-ratio:4/5}
+.foto-bn img{filter:grayscale(1)}
+.historia-cierre{margin-top:clamp(56px,8vw,112px);font-family:var(--display);font-weight:800;font-size:clamp(28px,3.4vw,44px);line-height:1.05;text-transform:uppercase;text-align:center;color:var(--ceniza);text-wrap:balance}
+@media (max-width:900px){
+  .hito-bloque,.hito-invertido{grid-template-columns:1fr}
+  .hito-bloque .hito-foto{order:-1;max-width:380px}
+  .hito-invertido .hito-txt{order:0}
+}
 
 /* Contacto */
 /* Contacto: cierre oscuro, centrado, con resplandor desde abajo y chispas que suben */
