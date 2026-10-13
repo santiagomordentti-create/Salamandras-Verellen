@@ -70,11 +70,30 @@
     if (ancho) filas.push('Ancho ' + fmt(ancho));
     return filas;
   }
+  // Nombres más claros para las etiquetas del sitio viejo (los valores no se tocan)
+  var NOMBRES = {
+    'alto con pié o leñero': 'Alto con leñero', 'altura sin suplemento': 'Alto',
+    'rendimiento térmico': 'Calefacciona', 'salida de recuperador': 'Salida para recuperador'
+  };
+  function nombreDato(et) {
+    var n = NOMBRES[et.toLowerCase()] || et;
+    return n.charAt(0).toUpperCase() + n.slice(1).toLowerCase();
+  }
+  // Orden de la tabla: primero las medidas, después lo técnico y al final el resto
+  var ORDEN = [/^alt(ura|o)( sin suplemento| total)?$/i, /^alto con/i, /^ancho/i, /^profundidad/i, /^peso/i,
+    /^salida de humos/i, /^salida de recuperador/i];
+  function puesto(d) {
+    for (var i = 0; i < ORDEN.length; i++) if (ORDEN[i].test(d.etiqueta)) return i;
+    return ORDEN.length;
+  }
   function specs(p, excluir) {
-    var datos = p.datos.filter(function (d) { return !excluir || excluir.indexOf(d) < 0; });
+    var datos = p.datos.filter(function (d) { return !excluir || excluir.indexOf(d) < 0; })
+      .map(function (d, i) { return { d: d, i: i }; })
+      .sort(function (a, b) { return puesto(a.d) - puesto(b.d) || a.i - b.i; })
+      .map(function (x) { return x.d; });
     if (!datos.length) return '';
-    return '<dl class="specs">' + datos.map(function (d) {
-      return '<div><dt>' + esc(d.etiqueta) + '</dt><dd>' + esc(fmt(d.valor)) + '</dd></div>';
+    return '<dl class="specs specs-lista">' + datos.map(function (d) {
+      return '<div><dt>' + esc(nombreDato(d.etiqueta)) + '</dt><dd>' + esc(fmt(d.valor)) + '</dd></div>';
     }).join('') + '</dl>';
   }
 
@@ -163,7 +182,8 @@
     } else if (prods.length === 2) {
       html += '<div class="duo">' + prods.map(function (p) {
         return '<article class="duo-item"><a href="' + urlProd(p) + '" tabindex="-1" aria-hidden="true">' + foto(p, 0) + '</a>' +
-          '<h2><a href="' + urlProd(p) + '">' + esc(p.nombre) + '</a></h2>' + specs(p) +
+          // Solo los datos clave: la tabla completa queda en la ficha
+          '<h2><a href="' + urlProd(p) + '">' + esc(p.nombre) + '</a></h2>' + destacadosHTML(destacados(p)) +
           '<div class="ctas"><a class="btn btn-linea" href="' + urlProd(p) + '">Ver ficha</a>' +
           '<a class="btn btn-fuego" href="' + wa('Hola! Quisiera consultar por ' + ARTICULO[c.slug] + ' ' + p.nombre + '.') +
           '" target="_blank" rel="noopener">Consultar</a></div></article>';

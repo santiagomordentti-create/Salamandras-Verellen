@@ -181,6 +181,9 @@ section{padding-block:clamp(72px,10vw,128px)}
 .specs dd{margin:0;color:var(--ceniza);font-size:16px;font-weight:600;text-align:right}
 .seccion-clara .specs dt{color:var(--texto-2)}
 .seccion-clara .specs dd{color:var(--carbon)}
+/* Tabla de la ficha de producto: una columna angosta, etiqueta y valor cerca */
+.specs.specs-lista{grid-template-columns:1fr;max-width:560px;border-top-color:rgba(238,230,220,.1)}
+.specs.specs-lista div:nth-child(n){padding:14px 0;border-left:0;border-bottom-color:rgba(238,230,220,.1)}
 @media (max-width:480px){.specs{grid-template-columns:1fr}.specs div:nth-child(odd),.specs div:nth-child(even){padding-inline:0;border-left:0}}
 
 /* Pasos para elegir */
