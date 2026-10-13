@@ -162,7 +162,6 @@ section{padding-block:clamp(72px,10vw,128px)}
 .ficha-sec{background:var(--hollin);border-block:1px solid var(--hierro)}
 .ficha{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,72px);align-items:center}
 @media (max-width:860px){.ficha{grid-template-columns:1fr}}
-.ficha .foto{aspect-ratio:1;background-color:var(--carbon)}
 .ficha-info{display:grid;gap:22px}
 .modelo{font-family:var(--display);font-weight:900;font-size:clamp(72px,10vw,132px);line-height:.85;color:var(--ceniza)}
 .modelo small{display:block;font-family:var(--mono);font-weight:400;font-size:12px;letter-spacing:.14em;color:var(--ambar);margin-bottom:12px}
@@ -292,11 +291,14 @@ footer{border-top:1px solid var(--hierro)}
 .titulo h1{font-size:clamp(56px,8vw,104px);color:var(--brasa)}
 
 /* Foto de producto (con imagen real); sin imagen se usa .foto */
-.media{position:relative;aspect-ratio:1;background:var(--hollin);border:1px solid var(--hierro);overflow:hidden}
+.media{position:relative;aspect-ratio:1;background:var(--hollin);border:1px solid var(--linea,var(--hierro));overflow:hidden}
+/* Tarjetas de la home: foto 4:5 como los placeholders */
+.media-alta{aspect-ratio:4/5}
 .media img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .4s ease-out}
 .prod .foto{aspect-ratio:1}
 .cat:hover .media{border-color:rgba(232,116,44,.6)}
-.cat:hover .media img{transform:scale(1.03)}
+.cat:hover .media img,a.media:hover img{transform:scale(1.03)}
+a.media:hover{border-color:rgba(232,116,44,.6)}
 .clave{list-style:none;margin:2px 0 0;padding:0;display:grid;gap:2px;font-size:14px;color:#CFC4B7;font-variant-numeric:tabular-nums}
 .seccion-clara .clave{color:var(--texto-2)}
 

@@ -131,10 +131,10 @@ window.PRODUCTOS = [
     ],
     "m2": 200,
     "fotos": [
-      "assets/productos/st-v-060/foto-1.jpg",
-      "assets/productos/st-v-060/foto-2.jpg",
       "assets/productos/st-v-060/foto-3.jpg",
+      "assets/productos/st-v-060/foto-2.jpg",
       "assets/productos/st-v-060/foto-4.jpg",
+      "assets/productos/st-v-060/foto-1.jpg",
       "assets/productos/st-v-060/foto-5.jpg"
     ],
     "descargas": [
