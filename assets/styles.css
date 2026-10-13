@@ -220,20 +220,17 @@ section{padding-block:clamp(72px,10vw,128px)}
 @media (prefers-reduced-motion:reduce){.galeria-foto img{transition:none}}
 @media (max-width:860px){.galeria{grid-auto-rows:120px}}
 
-/* Nosotros: intro de 1953 y dos paneles de foto grande con texto encima (Felipe y Nico) */
-.anio{font-family:var(--display);font-weight:900;font-size:clamp(80px,10vw,150px);line-height:.8;color:transparent;-webkit-text-stroke:1.5px var(--brasa)}
-.intro-1953{display:grid;grid-template-columns:auto minmax(0,60ch);gap:clamp(24px,4vw,56px);align-items:center;padding-block:clamp(24px,3vw,36px);margin-bottom:clamp(56px,8vw,96px);border-block:1px solid var(--hierro)}
-.anio-1953{font-size:clamp(56px,7vw,96px)}
-.intro-texto{font-size:18px;color:var(--ceniza)}
+/* Nosotros: dos paneles de foto grande con texto encima (Felipe y Nico) y el cierre */
+#nosotros{padding-bottom:0}
 .panel{position:relative;isolation:isolate;display:flex;align-items:center;height:clamp(480px,80vh,720px);overflow:hidden;background:var(--carbon)}
 .panel>.wrap{width:100%}
 .panel-foto{position:absolute;inset:0;z-index:-1;overflow:hidden}
 .panel-foto img{display:block;width:100%;height:100%;object-fit:cover}
 .panel-foto::after{content:"";position:absolute;inset:0}
-.panel-txt{display:grid;gap:14px;max-width:min(520px,46%)}
-.panel .anio{margin-bottom:4px}
-.panel-etiqueta{font-weight:600;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--ambar)}
-.panel-nombre{font-size:clamp(44px,5.5vw,76px);font-weight:800}
+.panel-txt{display:grid;max-width:min(520px,46%)}
+.panel-etiqueta{margin-bottom:12px;font-weight:600;font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:var(--ambar)}
+.panel-etiqueta span{color:var(--brasa)}
+.panel-nombre{margin-bottom:20px;font-size:clamp(52px,7vw,96px);font-weight:800}
 .panel-texto{font-size:18px;line-height:1.6;color:var(--ceniza)}
 /* Felipe: foto vertical (722px), así que ocupa la mitad derecha del panel; a todo el ancho se ampliaba el doble
    y solo se veían los ojos. En blanco y negro, fundida hacia la izquierda donde va el texto */
@@ -251,14 +248,10 @@ section{padding-block:clamp(72px,10vw,128px)}
   .js .panel-foto img{transform:scale(1.08);transition:transform 1.2s ease-out}
   .js .panel.visto .panel-foto img{transform:none}
 }
-.historia-juntos{margin:clamp(56px,8vw,112px) 0 0;display:grid;gap:12px}
-.historia-juntos .foto{aspect-ratio:16/9}
-.historia-juntos figcaption{font-size:14px;font-style:italic;color:#CFC4B7}
-.historia-cierre{margin-top:clamp(56px,8vw,112px);display:grid;gap:14px;justify-items:center;text-align:center}
+.historia-cierre{padding-block:64px;display:grid;gap:14px;justify-items:center;text-align:center}
 .cierre-grande{font-family:var(--display);font-weight:800;font-size:clamp(40px,6vw,80px);line-height:.95;text-transform:uppercase;color:var(--ceniza);text-wrap:balance}
 .cierre-chico{font-family:var(--display);font-weight:700;font-size:clamp(20px,2.4vw,30px);line-height:1.1;text-transform:uppercase;color:var(--brasa);text-wrap:balance}
 @media (max-width:759px){
-  .intro-1953{grid-template-columns:1fr;gap:12px}
   .panel{display:block;height:auto}
   .panel-foto,.panel-felipe .panel-foto,.panel-nico .panel-foto{position:relative;width:100%;height:60vh;z-index:0}
   .panel-txt{max-width:none}
