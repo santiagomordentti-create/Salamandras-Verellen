@@ -131,7 +131,7 @@ window.PRODUCTOS = [
     ],
     "m2": 200,
     "fotos": [
-      "assets/productos/st-v-060/foto-3.jpg",
+      "assets/productos/st-v-060/real-1.jpg",
       "assets/productos/st-v-060/foto-2.jpg",
       "assets/productos/st-v-060/foto-4.jpg",
       "assets/productos/st-v-060/foto-1.jpg",
@@ -207,12 +207,14 @@ window.PRODUCTOS = [
     ],
     "m2": 150,
     "fotos": [
+      "assets/productos/st-c-070/real-1.jpg",
+      "assets/productos/st-c-070/real-2.jpg",
+      "assets/productos/st-c-070/real-3.jpg",
       "assets/productos/st-c-070/foto-1.jpg",
       "assets/productos/st-c-070/foto-2.jpg",
       "assets/productos/st-c-070/foto-3.jpg",
       "assets/productos/st-c-070/foto-4.jpg",
       "assets/productos/st-c-070/foto-5.jpg",
-      "assets/productos/st-c-070/foto-6.jpg",
       "assets/productos/st-c-070/foto-7.jpg"
     ],
     "descargas": [
@@ -360,10 +362,10 @@ window.PRODUCTOS = [
     ],
     "m2": 60,
     "fotos": [
+      "assets/productos/st-c-040/real-1.jpg",
       "assets/productos/st-c-040/foto-1.jpg",
       "assets/productos/st-c-040/foto-2.jpg",
       "assets/productos/st-c-040/foto-3.jpg",
-      "assets/productos/st-c-040/foto-4.jpg",
       "assets/productos/st-c-040/foto-5.jpg",
       "assets/productos/st-c-040/foto-6.jpg"
     ],
@@ -437,6 +439,7 @@ window.PRODUCTOS = [
     ],
     "m2": 60,
     "fotos": [
+      "assets/productos/st-v-040/real-1.jpg",
       "assets/productos/st-v-040/foto-1.jpg",
       "assets/productos/st-v-040/foto-2.jpg",
       "assets/productos/st-v-040/foto-3.jpg",
@@ -514,6 +517,9 @@ window.PRODUCTOS = [
     ],
     "m2": 150,
     "fotos": [
+      "assets/productos/st-v-070/real-1.jpg",
+      "assets/productos/st-v-070/real-2.jpg",
+      "assets/productos/st-v-070/real-3.jpg",
       "assets/productos/st-v-070/foto-1.jpg",
       "assets/productos/st-v-070/foto-2.jpg",
       "assets/productos/st-v-070/foto-3.jpg",
@@ -592,10 +598,11 @@ window.PRODUCTOS = [
     ],
     "m2": 120,
     "fotos": [
+      "assets/productos/st-v-050/real-1.jpg",
+      "assets/productos/st-v-050/real-2.jpg",
       "assets/productos/st-v-050/foto-1.jpg",
       "assets/productos/st-v-050/foto-2.jpg",
       "assets/productos/st-v-050/foto-3.jpg",
-      "assets/productos/st-v-050/foto-4.jpg",
       "assets/productos/st-v-050/foto-5.jpg"
     ],
     "descargas": [
@@ -744,14 +751,12 @@ window.PRODUCTOS = [
     ],
     "m2": 60,
     "fotos": [
-      "assets/productos/compact-v-040/foto-1.jpg",
-      "assets/productos/compact-v-040/foto-2.jpg",
-      "assets/productos/compact-v-040/foto-3.jpg",
-      "assets/productos/compact-v-040/foto-4.jpg",
-      "assets/productos/compact-v-040/foto-5.jpg",
-      "assets/productos/compact-v-040/foto-6.jpg",
-      "assets/productos/compact-v-040/foto-7.jpg",
-      "assets/productos/compact-v-040/foto-8.jpg"
+      "assets/productos/compact-v-040/real-1.jpg",
+      "assets/productos/compact-v-040/real-2.jpg",
+      "assets/productos/compact-v-040/real-3.jpg",
+      "assets/productos/compact-v-040/real-4.jpg",
+      "assets/productos/compact-v-040/real-5.jpg",
+      "assets/productos/compact-v-040/real-6.jpg"
     ],
     "descargas": [
       {
@@ -823,8 +828,9 @@ window.PRODUCTOS = [
     ],
     "m2": 150,
     "fotos": [
+      "assets/productos/compact-v-070/real-1.jpg",
+      "assets/productos/compact-v-070/real-2.jpg",
       "assets/productos/compact-v-070/foto-1.jpg",
-      "assets/productos/compact-v-070/foto-2.jpg",
       "assets/productos/compact-v-070/foto-3.jpg",
       "assets/productos/compact-v-070/foto-4.jpg",
       "assets/productos/compact-v-070/foto-5.jpg",
@@ -903,9 +909,7 @@ window.PRODUCTOS = [
     "m2": 60,
     "fotos": [
       "assets/productos/compact-c-040/foto-1.jpg",
-      "assets/productos/compact-c-040/foto-2.jpg",
-      "assets/productos/compact-c-040/foto-3.jpg",
-      "assets/productos/compact-c-040/foto-4.jpg"
+      "assets/productos/compact-c-040/foto-2.jpg"
     ],
     "descargas": [
       {
@@ -973,12 +977,12 @@ window.PRODUCTOS = [
     ],
     "m2": 290,
     "fotos": [
-      "assets/productos/m-090/foto-1.jpg",
-      "assets/productos/m-090/foto-2.jpg",
-      "assets/productos/m-090/foto-3.jpg",
-      "assets/productos/m-090/foto-4.jpg",
-      "assets/productos/m-090/foto-5.jpg",
-      "assets/productos/m-090/foto-6.jpg"
+      "assets/productos/m-090/real-1.jpg",
+      "assets/productos/m-090/real-2.jpg",
+      "assets/productos/m-090/real-3.jpg",
+      "assets/productos/m-090/real-4.jpg",
+      "assets/productos/m-090/real-5.jpg",
+      "assets/productos/m-090/real-6.jpg"
     ],
     "descargas": [
       {
@@ -1046,12 +1050,12 @@ window.PRODUCTOS = [
     ],
     "m2": 200,
     "fotos": [
-      "assets/productos/m-060/foto-1.jpg",
-      "assets/productos/m-060/foto-2.jpg",
-      "assets/productos/m-060/foto-3.jpg",
-      "assets/productos/m-060/foto-4.jpg",
-      "assets/productos/m-060/foto-5.jpg",
-      "assets/productos/m-060/foto-6.jpg"
+      "assets/productos/m-060/real-1.jpg",
+      "assets/productos/m-060/real-2.jpg",
+      "assets/productos/m-060/real-3.jpg",
+      "assets/productos/m-060/real-4.jpg",
+      "assets/productos/m-060/real-5.jpg",
+      "assets/productos/m-060/real-6.jpg"
     ],
     "descargas": [
       {
@@ -1123,6 +1127,8 @@ window.PRODUCTOS = [
     ],
     "m2": 80,
     "fotos": [
+      "assets/productos/m-040/real-1.jpg",
+      "assets/productos/m-040/real-2.jpg",
       "assets/productos/m-040/foto-1.jpg",
       "assets/productos/m-040/foto-2.png",
       "assets/productos/m-040/foto-3.png",
@@ -1195,10 +1201,12 @@ window.PRODUCTOS = [
     ],
     "m2": 120,
     "fotos": [
-      "assets/productos/m-050/foto-1.jpg",
-      "assets/productos/m-050/foto-2.jpg",
-      "assets/productos/m-050/foto-3.jpg",
-      "assets/productos/m-050/foto-4.jpg"
+      "assets/productos/m-050/real-1.jpg",
+      "assets/productos/m-050/real-2.jpg",
+      "assets/productos/m-050/real-3.jpg",
+      "assets/productos/m-050/real-4.jpg",
+      "assets/productos/m-050/real-5.jpg",
+      "assets/productos/m-050/real-6.jpg"
     ],
     "descargas": [
       {
@@ -1266,9 +1274,9 @@ window.PRODUCTOS = [
     ],
     "m2": 120,
     "fotos": [
+      "assets/productos/m-050-esquinera/real-1.jpg",
       "assets/productos/m-050-esquinera/foto-1.jpg",
       "assets/productos/m-050-esquinera/foto-2.jpg",
-      "assets/productos/m-050-esquinera/foto-3.jpg",
       "assets/productos/m-050-esquinera/foto-4.jpg"
     ],
     "descargas": [
@@ -1337,11 +1345,11 @@ window.PRODUCTOS = [
     ],
     "m2": 90,
     "fotos": [
+      "assets/productos/m-040-esquinera/real-1.jpg",
+      "assets/productos/m-040-esquinera/real-2.jpg",
       "assets/productos/m-040-esquinera/foto-1.jpg",
       "assets/productos/m-040-esquinera/foto-2.png",
       "assets/productos/m-040-esquinera/foto-3.png",
-      "assets/productos/m-040-esquinera/foto-4.jpg",
-      "assets/productos/m-040-esquinera/foto-5.jpg",
       "assets/productos/m-040-esquinera/foto-6.jpg"
     ],
     "descargas": [
@@ -1414,11 +1422,13 @@ window.PRODUCTOS = [
     ],
     "m2": 100,
     "fotos": [
+      "assets/productos/m-090-empotrable/real-1.jpg",
+      "assets/productos/m-090-empotrable/real-2.jpg",
+      "assets/productos/m-090-empotrable/real-3.jpg",
+      "assets/productos/m-090-empotrable/real-4.jpg",
       "assets/productos/m-090-empotrable/foto-1.jpg",
       "assets/productos/m-090-empotrable/foto-2.jpg",
-      "assets/productos/m-090-empotrable/foto-3.jpg",
-      "assets/productos/m-090-empotrable/foto-4.jpg",
-      "assets/productos/m-090-empotrable/foto-5.jpg"
+      "assets/productos/m-090-empotrable/foto-4.jpg"
     ],
     "descargas": [
       {
@@ -1485,11 +1495,11 @@ window.PRODUCTOS = [
     ],
     "m2": 100,
     "fotos": [
+      "assets/productos/m-060-empotrable/real-1.jpg",
+      "assets/productos/m-060-empotrable/real-2.jpg",
       "assets/productos/m-060-empotrable/foto-1.jpg",
       "assets/productos/m-060-empotrable/foto-2.jpg",
-      "assets/productos/m-060-empotrable/foto-3.jpg",
-      "assets/productos/m-060-empotrable/foto-4.jpg",
-      "assets/productos/m-060-empotrable/foto-5.jpg"
+      "assets/productos/m-060-empotrable/foto-4.jpg"
     ],
     "descargas": [
       {
@@ -1552,7 +1562,10 @@ window.PRODUCTOS = [
     ],
     "m2": 250,
     "fotos": [
-      "assets/productos/hogar-085/foto-1.jpg",
+      "assets/productos/hogar-085/real-1.jpg",
+      "assets/productos/hogar-085/real-2.jpg",
+      "assets/productos/hogar-085/real-3.jpg",
+      "assets/productos/hogar-085/real-4.jpg",
       "assets/productos/hogar-085/foto-2.jpg",
       "assets/productos/hogar-085/foto-3.jpg",
       "assets/productos/hogar-085/foto-4.jpg",
@@ -1628,9 +1641,9 @@ window.PRODUCTOS = [
     ],
     "m2": 290,
     "fotos": [
-      "assets/productos/hogar-140/foto-1.jpg",
-      "assets/productos/hogar-140/foto-2.jpg",
-      "assets/productos/hogar-140/foto-3.jpg"
+      "assets/productos/hogar-140/real-1.jpg",
+      "assets/productos/hogar-140/real-2.jpg",
+      "assets/productos/hogar-140/real-3.jpg"
     ],
     "descargas": [
       {
@@ -1696,8 +1709,10 @@ window.PRODUCTOS = [
     "m2": 200,
     "m2_origen": "descripcion",
     "fotos": [
+      "assets/productos/sh-v-060/real-1.jpg",
+      "assets/productos/sh-v-060/real-2.jpg",
+      "assets/productos/sh-v-060/real-3.jpg",
       "assets/productos/sh-v-060/foto-1.jpg",
-      "assets/productos/sh-v-060/foto-2.jpg",
       "assets/productos/sh-v-060/foto-3.jpg",
       "assets/productos/sh-v-060/foto-4.jpg",
       "assets/productos/sh-v-060/foto-5.jpg",
@@ -1732,14 +1747,11 @@ window.PRODUCTOS = [
     "m2": 200,
     "m2_origen": "descripcion",
     "fotos": [
-      "assets/productos/st-v-060-con-horno/foto-1.jpg",
-      "assets/productos/st-v-060-con-horno/foto-2.jpg",
-      "assets/productos/st-v-060-con-horno/foto-3.jpg",
-      "assets/productos/st-v-060-con-horno/foto-4.jpg",
-      "assets/productos/st-v-060-con-horno/foto-5.jpg",
-      "assets/productos/st-v-060-con-horno/foto-6.jpg",
-      "assets/productos/st-v-060-con-horno/foto-7.jpg",
-      "assets/productos/st-v-060-con-horno/foto-8.jpg"
+      "assets/productos/st-v-060-con-horno/real-1.jpg",
+      "assets/productos/st-v-060-con-horno/real-2.jpg",
+      "assets/productos/st-v-060-con-horno/real-3.jpg",
+      "assets/productos/st-v-060-con-horno/real-4.jpg",
+      "assets/productos/st-v-060-con-horno/real-5.jpg"
     ],
     "descargas": [
       {
@@ -1770,11 +1782,12 @@ window.PRODUCTOS = [
     "m2": 120,
     "m2_origen": "descripcion",
     "fotos": [
-      "assets/productos/st-v-050-con-horno/foto-1.jpg",
-      "assets/productos/st-v-050-con-horno/foto-2.jpg",
-      "assets/productos/st-v-050-con-horno/foto-3.jpg",
-      "assets/productos/st-v-050-con-horno/foto-4.jpg",
-      "assets/productos/st-v-050-con-horno/foto-5.jpg"
+      "assets/productos/st-v-050-con-horno/real-1.jpg",
+      "assets/productos/st-v-050-con-horno/real-2.jpg",
+      "assets/productos/st-v-050-con-horno/real-3.jpg",
+      "assets/productos/st-v-050-con-horno/real-4.jpg",
+      "assets/productos/st-v-050-con-horno/real-5.jpg",
+      "assets/productos/st-v-050-con-horno/real-6.jpg"
     ],
     "descargas": [
       {
@@ -1805,6 +1818,9 @@ window.PRODUCTOS = [
     "m2": 290,
     "m2_origen": "descripcion",
     "fotos": [
+      "assets/productos/sh-v-090/real-1.jpg",
+      "assets/productos/sh-v-090/real-2.jpg",
+      "assets/productos/sh-v-090/real-3.jpg",
       "assets/productos/sh-v-090/foto-1.jpg",
       "assets/productos/sh-v-090/foto-2.jpg",
       "assets/productos/sh-v-090/foto-3.jpg",
@@ -1840,6 +1856,8 @@ window.PRODUCTOS = [
     "m2": 120,
     "m2_origen": "descripcion",
     "fotos": [
+      "assets/productos/st-c-050-con-horno/real-1.jpg",
+      "assets/productos/st-c-050-con-horno/real-2.jpg",
       "assets/productos/st-c-050-con-horno/foto-1.jpg",
       "assets/productos/st-c-050-con-horno/foto-2.jpg",
       "assets/productos/st-c-050-con-horno/foto-3.jpg",
@@ -1892,19 +1910,12 @@ window.PRODUCTOS = [
     "m2": null,
     "datos_origen": "descripcion",
     "fotos": [
-      "assets/productos/convectores/foto-1.jpg",
-      "assets/productos/convectores/foto-2.jpg",
-      "assets/productos/convectores/foto-3.jpg",
-      "assets/productos/convectores/foto-4.jpg",
-      "assets/productos/convectores/foto-5.jpg",
-      "assets/productos/convectores/foto-6.jpg",
-      "assets/productos/convectores/foto-7.jpg",
-      "assets/productos/convectores/foto-8.jpg",
-      "assets/productos/convectores/foto-9.jpg",
-      "assets/productos/convectores/foto-10.jpg",
-      "assets/productos/convectores/foto-11.jpg",
-      "assets/productos/convectores/foto-12.jpg",
-      "assets/productos/convectores/foto-13.jpg"
+      "assets/productos/convectores/real-1.jpg",
+      "assets/productos/convectores/real-2.jpg",
+      "assets/productos/convectores/real-3.jpg",
+      "assets/productos/convectores/real-4.jpg",
+      "assets/productos/convectores/real-5.jpg",
+      "assets/productos/convectores/real-6.jpg"
     ],
     "descargas": [
       {
@@ -2013,6 +2024,8 @@ window.PRODUCTOS = [
     ],
     "m2": null,
     "fotos": [
+      "assets/productos/fogon-090/real-1.jpg",
+      "assets/productos/fogon-090/real-2.jpg",
       "assets/productos/fogon-090/foto-1.jpg",
       "assets/productos/fogon-090/foto-2.jpg",
       "assets/productos/fogon-090/foto-3.jpg"
@@ -2133,6 +2146,8 @@ window.PRODUCTOS = [
     ],
     "m2": null,
     "fotos": [
+      "assets/productos/lenero-chico/real-1.jpg",
+      "assets/productos/lenero-chico/real-2.jpg",
       "assets/productos/lenero-chico/foto-1.jpg",
       "assets/productos/lenero-chico/foto-2.jpg",
       "assets/productos/lenero-chico/foto-3.jpg",
@@ -2352,6 +2367,9 @@ window.PRODUCTOS = [
     ],
     "m2": null,
     "fotos": [
+      "assets/productos/horno-empotrable-puerta-vitroceramico/real-1.jpg",
+      "assets/productos/horno-empotrable-puerta-vitroceramico/real-2.jpg",
+      "assets/productos/horno-empotrable-puerta-vitroceramico/real-3.jpg",
       "assets/productos/horno-empotrable-puerta-vitroceramico/foto-1.jpg",
       "assets/productos/horno-empotrable-puerta-vitroceramico/foto-2.jpg",
       "assets/productos/horno-empotrable-puerta-vitroceramico/foto-3.jpg",
@@ -2426,6 +2444,7 @@ window.PRODUCTOS = [
     ],
     "m2": 150,
     "fotos": [
+      "assets/productos/horno-brasato/real-1.jpg",
       "assets/productos/horno-brasato/foto-1.jpg",
       "assets/productos/horno-brasato/foto-2.jpg",
       "assets/productos/horno-brasato/foto-3.jpg",
@@ -2489,12 +2508,11 @@ window.PRODUCTOS = [
     ],
     "m2": null,
     "fotos": [
-      "assets/productos/horno-empotrable-puerta-ciega/foto-1.jpg",
-      "assets/productos/horno-empotrable-puerta-ciega/foto-2.jpg",
-      "assets/productos/horno-empotrable-puerta-ciega/foto-3.jpg",
-      "assets/productos/horno-empotrable-puerta-ciega/foto-4.jpg",
-      "assets/productos/horno-empotrable-puerta-ciega/foto-5.jpg",
-      "assets/productos/horno-empotrable-puerta-ciega/foto-6.jpg"
+      "assets/productos/horno-empotrable-puerta-ciega/real-1.jpg",
+      "assets/productos/horno-empotrable-puerta-ciega/real-2.jpg",
+      "assets/productos/horno-empotrable-puerta-ciega/real-3.jpg",
+      "assets/productos/horno-empotrable-puerta-ciega/real-4.jpg",
+      "assets/productos/horno-empotrable-puerta-ciega/real-5.jpg"
     ],
     "descargas": [
       {
