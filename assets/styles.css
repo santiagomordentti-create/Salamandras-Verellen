@@ -240,7 +240,12 @@ section{padding-block:clamp(72px,10vw,128px)}
 .hito-texto{color:var(--humo);font-size:17px}
 .hito-foto{aspect-ratio:4/5}
 .foto-bn img{filter:grayscale(1)}
-.historia-cierre{margin-top:clamp(56px,8vw,112px);font-family:var(--display);font-weight:800;font-size:clamp(28px,3.4vw,44px);line-height:1.05;text-transform:uppercase;text-align:center;color:var(--ceniza);text-wrap:balance}
+.historia-juntos{margin:clamp(56px,8vw,112px) 0 0;display:grid;gap:12px}
+.historia-juntos .foto{aspect-ratio:16/9}
+.historia-juntos figcaption{font-size:14px;font-style:italic;color:#CFC4B7}
+.historia-cierre{margin-top:clamp(56px,8vw,112px);display:grid;gap:14px;justify-items:center;text-align:center}
+.cierre-grande{font-family:var(--display);font-weight:800;font-size:clamp(40px,6vw,80px);line-height:.95;text-transform:uppercase;color:var(--ceniza);text-wrap:balance}
+.cierre-chico{font-family:var(--display);font-weight:700;font-size:clamp(20px,2.4vw,30px);line-height:1.1;text-transform:uppercase;color:var(--brasa);text-wrap:balance}
 @media (max-width:900px){
   .hito-bloque,.hito-invertido{grid-template-columns:1fr}
   .hito-bloque .hito-foto{order:-1;max-width:380px}
