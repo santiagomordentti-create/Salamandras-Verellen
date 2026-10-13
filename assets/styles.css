@@ -166,12 +166,22 @@ section{padding-block:clamp(72px,10vw,128px)}
 .ficha-info{display:grid;gap:22px}
 .modelo{font-family:var(--display);font-weight:900;font-size:clamp(72px,10vw,132px);line-height:.85;color:var(--ceniza)}
 .modelo small{display:block;font-family:var(--mono);font-weight:400;font-size:12px;letter-spacing:.14em;color:var(--ambar);margin-bottom:12px}
-.specs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid var(--hierro)}
-.specs div{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid var(--hierro);font-family:var(--mono);font-size:14px;font-variant-numeric:tabular-nums}
+/* Datos clave: tres recuadros arriba de la tabla (valor grande y etiqueta debajo) */
+.destacados{display:grid;grid-template-columns:repeat(auto-fit,minmax(96px,1fr));gap:12px;margin:0}
+.destacados div{display:flex;flex-direction:column-reverse;align-items:center;justify-content:center;gap:6px;padding:16px;border-radius:8px;background:var(--hierro);text-align:center}
+.destacados dd{margin:0;font-family:var(--display);font-weight:800;font-size:clamp(28px,3vw,40px);line-height:1;color:var(--brasa);white-space:nowrap}
+.destacados dd small{margin-left:.15em;font-size:.5em;font-weight:700}
+.destacados dt{font-size:14px;line-height:1.3;color:#CFC4B7}
+.seccion-clara .destacados div{background:rgba(21,17,14,.06)}
+.seccion-clara .destacados dt{color:var(--texto-2)}
+.specs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid var(--linea,var(--hierro))}
+.specs div{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid var(--linea,var(--hierro));font-variant-numeric:tabular-nums}
 .specs div:nth-child(odd){padding-right:20px}
-.specs div:nth-child(even){padding-left:20px;border-left:1px solid var(--hierro)}
-.specs dt{color:var(--humo)}
-.specs dd{margin:0;color:var(--ceniza);text-align:right}
+.specs div:nth-child(even){padding-left:20px;border-left:1px solid var(--linea,var(--hierro))}
+.specs dt{color:#CFC4B7;font-size:15px}
+.specs dd{margin:0;color:var(--ceniza);font-size:16px;font-weight:600;text-align:right}
+.seccion-clara .specs dt{color:var(--texto-2)}
+.seccion-clara .specs dd{color:var(--carbon)}
 @media (max-width:480px){.specs{grid-template-columns:1fr}.specs div:nth-child(odd),.specs div:nth-child(even){padding-inline:0;border-left:0}}
 
 /* Pasos para elegir */
@@ -286,7 +296,8 @@ footer{border-top:1px solid var(--hierro)}
 .prod .foto{aspect-ratio:1}
 .cat:hover .media{border-color:rgba(232,116,44,.6)}
 .cat:hover .media img{transform:scale(1.03)}
-.clave{list-style:none;margin:2px 0 0;padding:0;display:grid;gap:2px;font-family:var(--mono);font-size:12.5px;color:var(--humo);font-variant-numeric:tabular-nums}
+.clave{list-style:none;margin:2px 0 0;padding:0;display:grid;gap:2px;font-size:14px;color:#CFC4B7;font-variant-numeric:tabular-nums}
+.seccion-clara .clave{color:var(--texto-2)}
 
 /* Filtro por m² (salamandras) */
 .filtro{display:grid;gap:16px;margin-bottom:clamp(36px,5vw,56px)}

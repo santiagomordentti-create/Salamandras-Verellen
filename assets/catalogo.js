@@ -70,11 +70,40 @@
     if (ancho) filas.push('Ancho ' + fmt(ancho));
     return filas;
   }
-  function specs(p) {
-    if (!p.datos.length) return '';
-    return '<dl class="specs">' + p.datos.map(function (d) {
+  function specs(p, excluir) {
+    var datos = p.datos.filter(function (d) { return !excluir || excluir.indexOf(d) < 0; });
+    if (!datos.length) return '';
+    return '<dl class="specs">' + datos.map(function (d) {
       return '<div><dt>' + esc(d.etiqueta) + '</dt><dd>' + esc(fmt(d.valor)) + '</dd></div>';
     }).join('') + '</dl>';
+  }
+
+  // Tres datos clave de la ficha. Calefacción: m², autonomía y potencia. El resto (o si no hay ninguno de esos): ancho, alto y peso
+  var CALOR = ['salamandras', 'con-horno', 'hogares', 'convectores'];
+  function buscar(p, re) { return p.datos.filter(function (d) { return re.test(d.etiqueta); })[0]; }
+  function destacados(p) {
+    var lista = [];
+    if (CALOR.indexOf(p.categoria) >= 0) {
+      if (p.m2) lista.push({ valor: p.m2 + ' m²', etiqueta: 'Calefacciona', dato: buscar(p, /^rendimiento/i) });
+      var aut = buscar(p, /^autonom/i);
+      if (aut) lista.push({ valor: fmt(aut.valor), etiqueta: 'Autonomía', dato: aut });
+      var pot = buscar(p, /^potencia/i);
+      if (pot) lista.push({ valor: fmt(pot.valor).replace(/\s*kcal\/h/i, ''), etiqueta: 'kcal/h', dato: pot });
+    }
+    if (!lista.length) {
+      [[/^ancho/i, 'Ancho'], [/^alt/i, 'Alto'], [/^peso/i, 'Peso']].forEach(function (x) {
+        var d = buscar(p, x[0]);
+        if (d) lista.push({ valor: fmt(d.valor).replace(/\s*aprox\.?$/i, ''), etiqueta: x[1], dato: d });
+      });
+    }
+    return lista;
+  }
+  function destacadosHTML(lista) {
+    return lista.length ? '<dl class="destacados">' + lista.map(function (x) {
+      // Número grande y unidad más chica, así "1.160 mm" entra en el recuadro en celular
+      var m = String(x.valor).match(/^([\d.,]+)\s*(.*)$/);
+      return '<div><dt>' + esc(x.etiqueta) + '</dt><dd>' + (m ? esc(m[1]) + (m[2] ? '<small>' + esc(m[2]) + '</small>' : '') : esc(x.valor)) + '</dd></div>';
+    }).join('') + '</dl>' : '';
   }
 
   function foto(p, i, clase) {
@@ -242,11 +271,13 @@
       }).join('');
 
     var etiqueta = c.nombre + (p.sublinea ? ' · Línea ' + p.sublinea : '');
+    var claveFicha = destacados(p);
     var info = '<div class="ficha-info"><p class="eyebrow">' + esc(etiqueta) + '</p>' +
       '<h1 class="modelo' + (p.nombre.length > 14 ? ' largo' : '') + '">' + esc(p.nombre) + '</h1>' +
       (p.subtitulo && !p.subtitulo_dudoso ? '<p class="prod-sub">' + esc(p.subtitulo) + '</p>' : '') +
       desc + lista('Componentes', p.componentes) + lista('Accesorios opcionales', p.accesorios_opcionales) +
-      specs(p) + '<div class="ctas">' + botones + '</div></div>';
+      destacadosHTML(claveFicha) + specs(p, claveFicha.map(function (x) { return x.dato; })) +
+      '<div class="ctas">' + botones + '</div></div>';
 
     // Otros modelos: primero los de la misma sublínea
     var otros = deCat(c.slug).filter(function (x) { return x.slug !== p.slug; })
