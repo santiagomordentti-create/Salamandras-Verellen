@@ -239,7 +239,12 @@ section{padding-block:clamp(72px,10vw,128px)}
 .hito-nombre{font-size:clamp(40px,5vw,64px);font-weight:800}
 .hito-texto{color:var(--humo);font-size:17px}
 .hito-foto{aspect-ratio:4/5}
-.foto-bn img{filter:grayscale(1)}
+/* Fotos de archivo: borde fino, sin redondeo. .foto-bn las pasa a blanco y negro */
+.foto-archivo{overflow:hidden;border:1px solid var(--hierro);background:var(--hollin)}
+.foto-archivo img{display:block;width:100%;height:100%;object-fit:cover}
+.foto-bn img{filter:grayscale(1) contrast(1.05)}
+/* Foto de baja resolución: no más ancha que 380px para que no se pixele */
+.foto-chica{width:100%;max-width:380px}
 .historia-juntos{margin:clamp(56px,8vw,112px) 0 0;display:grid;gap:12px}
 .historia-juntos .foto{aspect-ratio:16/9}
 .historia-juntos figcaption{font-size:14px;font-style:italic;color:#CFC4B7}
