@@ -2266,6 +2266,7 @@ window.PRODUCTOS = [
     ],
     "m2": null,
     "fotos": [
+      "assets/productos/parrilla-angus-850/real-1.jpg",
       "assets/productos/parrilla-angus-850/foto-1.jpg",
       "assets/productos/parrilla-angus-850/foto-2.png",
       "assets/productos/parrilla-angus-850/foto-3.jpg"
@@ -2315,8 +2316,11 @@ window.PRODUCTOS = [
     ],
     "m2": null,
     "fotos": [
-      "assets/productos/parrilla-angus-1100/foto-1.jpg",
-      "assets/productos/parrilla-angus-1100/foto-2.jpg"
+      "assets/productos/parrilla-angus-1100/real-1.jpg",
+      "assets/productos/parrilla-angus-1100/real-2.jpg",
+      "assets/productos/parrilla-angus-1100/real-3.jpg",
+      "assets/productos/parrilla-angus-1100/real-4.jpg",
+      "assets/productos/parrilla-angus-1100/real-5.jpg"
     ],
     "descargas": [
       {
