@@ -220,41 +220,53 @@ section{padding-block:clamp(72px,10vw,128px)}
 @media (prefers-reduced-motion:reduce){.galeria-foto img{transition:none}}
 @media (max-width:860px){.galeria{grid-auto-rows:120px}}
 
-/* Historia */
-/* Nosotros: línea de tiempo. La línea va al costado izquierdo; cada punto toma la altura de su año
-   (posición absoluta sin top: queda donde estaría en el flujo, centrado en .hito-marca) */
-.anio{font-family:var(--display);font-weight:900;font-size:clamp(72px,9vw,128px);line-height:.8;color:transparent;-webkit-text-stroke:1.5px var(--brasa)}
-.historia-linea{--margen:clamp(28px,4vw,56px);position:relative;list-style:none;margin:0;padding:0 0 0 var(--margen);display:grid;gap:clamp(56px,8vw,112px)}
-.linea-trazo{position:absolute;left:5px;top:0;width:2px;height:100%;background:var(--brasa);transform-origin:top}
-.hito-marca{display:flex;align-items:center;margin:0 0 6px}
-.hito-marca .anio{line-height:1}
-.hito-punto{position:absolute;left:0;width:12px;height:12px;border-radius:50%;background:var(--brasa);box-shadow:0 0 0 4px var(--carbon)}
-.hito-anio-chico{font-family:var(--display);font-weight:800;font-size:32px;line-height:1;color:var(--brasa)}
-.hito-intro{display:grid;gap:12px;max-width:60ch}
-.hito-intro .hito-texto{color:var(--humo)}
-.hito-bloque{display:grid;grid-template-columns:minmax(0,60ch) minmax(0,380px);justify-content:start;gap:clamp(32px,5vw,72px);align-items:start}
-.hito-invertido{grid-template-columns:minmax(0,380px) minmax(0,60ch)}
-.hito-invertido .hito-txt{order:2}
-.hito-txt{display:grid;gap:14px;align-content:start;max-width:60ch}
-.hito-nombre{font-size:clamp(40px,5vw,64px);font-weight:800}
-.hito-texto{color:var(--humo);font-size:17px}
-.hito-foto{aspect-ratio:4/5}
-/* Fotos de archivo: borde fino, sin redondeo. .foto-bn las pasa a blanco y negro */
-.foto-archivo{overflow:hidden;border:1px solid var(--hierro);background:var(--hollin)}
-.foto-archivo img{display:block;width:100%;height:100%;object-fit:cover}
-.foto-bn img{filter:grayscale(1) contrast(1.05)}
-/* Foto de baja resolución: no más ancha que 380px para que no se pixele */
-.foto-chica{width:100%;max-width:380px}
+/* Nosotros: intro de 1953 y dos paneles de foto grande con texto encima (Felipe y Nico) */
+.anio{font-family:var(--display);font-weight:900;font-size:clamp(80px,10vw,150px);line-height:.8;color:transparent;-webkit-text-stroke:1.5px var(--brasa)}
+.intro-1953{display:grid;grid-template-columns:auto minmax(0,60ch);gap:clamp(24px,4vw,56px);align-items:center;padding-block:clamp(24px,3vw,36px);margin-bottom:clamp(56px,8vw,96px);border-block:1px solid var(--hierro)}
+.anio-1953{font-size:clamp(56px,7vw,96px)}
+.intro-texto{font-size:18px;color:var(--ceniza)}
+.panel{position:relative;isolation:isolate;display:flex;align-items:center;height:clamp(480px,80vh,720px);overflow:hidden;background:var(--carbon)}
+.panel>.wrap{width:100%}
+.panel-foto{position:absolute;inset:0;z-index:-1;overflow:hidden}
+.panel-foto img{display:block;width:100%;height:100%;object-fit:cover}
+.panel-foto::after{content:"";position:absolute;inset:0}
+.panel-txt{display:grid;gap:14px;max-width:min(520px,46%)}
+.panel .anio{margin-bottom:4px}
+.panel-etiqueta{font-weight:600;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--ambar)}
+.panel-nombre{font-size:clamp(44px,5.5vw,76px);font-weight:800}
+.panel-texto{font-size:18px;line-height:1.6;color:var(--ceniza)}
+/* Felipe: foto vertical (722px), así que ocupa la mitad derecha del panel; a todo el ancho se ampliaba el doble
+   y solo se veían los ojos. En blanco y negro, fundida hacia la izquierda donde va el texto */
+.panel-felipe .panel-foto{left:auto;width:50%}
+.panel-felipe img{object-position:50% 30%;filter:grayscale(1) contrast(1.1)}
+.panel-felipe .panel-foto::after{background:linear-gradient(90deg,rgba(21,17,14,.95) 0%,rgba(21,17,14,0) 45%)}
+/* Nico: foto de baja resolución, solo en la mitad izquierda y con grano para disimularla */
+.panel-nico .panel-foto{right:auto;width:50%}
+.panel-nico img{object-position:50% 22%;filter:brightness(.85) saturate(.9)}
+.panel-grano{position:absolute;inset:0;background:url(textura-quemado.svg) repeat;background-size:300px 300px;opacity:.15;mix-blend-mode:overlay}
+.panel-nico .panel-foto::after{background:linear-gradient(270deg,var(--carbon) 0%,rgba(21,17,14,0) 45%)}
+.panel-nico .panel-txt{margin-left:auto}
+/* Zoom suave al entrar en pantalla (solo con JS y si no se pidió menos movimiento) */
+@media (prefers-reduced-motion:no-preference){
+  .js .panel-foto img{transform:scale(1.08);transition:transform 1.2s ease-out}
+  .js .panel.visto .panel-foto img{transform:none}
+}
 .historia-juntos{margin:clamp(56px,8vw,112px) 0 0;display:grid;gap:12px}
 .historia-juntos .foto{aspect-ratio:16/9}
 .historia-juntos figcaption{font-size:14px;font-style:italic;color:#CFC4B7}
 .historia-cierre{margin-top:clamp(56px,8vw,112px);display:grid;gap:14px;justify-items:center;text-align:center}
 .cierre-grande{font-family:var(--display);font-weight:800;font-size:clamp(40px,6vw,80px);line-height:.95;text-transform:uppercase;color:var(--ceniza);text-wrap:balance}
 .cierre-chico{font-family:var(--display);font-weight:700;font-size:clamp(20px,2.4vw,30px);line-height:1.1;text-transform:uppercase;color:var(--brasa);text-wrap:balance}
-@media (max-width:900px){
-  .hito-bloque,.hito-invertido{grid-template-columns:1fr}
-  .hito-bloque .hito-foto{order:-1;max-width:380px}
-  .hito-invertido .hito-txt{order:0}
+@media (max-width:759px){
+  .intro-1953{grid-template-columns:1fr;gap:12px}
+  .panel{display:block;height:auto}
+  .panel-foto,.panel-felipe .panel-foto,.panel-nico .panel-foto{position:relative;width:100%;height:60vh;z-index:0}
+  .panel-txt{max-width:none}
+  .panel-felipe img{object-position:50% 30%}
+  .panel-nico img{object-position:50% 20%}
+  .panel-felipe .panel-foto::after,.panel-nico .panel-foto::after{background:linear-gradient(180deg,rgba(21,17,14,0) 55%,var(--carbon) 100%)}
+  .panel>.wrap{padding-block:8px 64px}
+  .panel-nico .panel-txt{margin-left:0}
 }
 
 /* Contacto */
