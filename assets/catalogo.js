@@ -175,7 +175,10 @@
 
     if (c.proximamente) {
       var nombre = c.nombre.toLowerCase();
-      html += '<div class="proximo"><p class="lead">Estamos terminando los modelos de ' + esc(nombre) +
+      html += '<div class="proximo">' + (c.fotos ? '<div class="proximo-fotos">' + c.fotos.map(function (f, i) {
+        return '<div class="media"><img src="' + esc(src(f)) + '" alt="' + esc(c.nombre) + ' Verellen' + (i ? ', detalle del logo' : '') +
+          '"' + (i ? ' loading="lazy"' : '') + ' decoding="async"></div>';
+      }).join('') + '</div>' : '') + '<p class="lead">Estamos terminando los modelos de ' + esc(nombre) +
         '. Escribinos y te contamos qué medidas va a haber y cuándo salen.</p>' +
         '<a class="btn btn-fuego" href="' + wa('Hola! Quisiera consultar por ' + nombre + '.') +
         '" target="_blank" rel="noopener">Consultar por ' + esc(nombre) + '</a></div>';

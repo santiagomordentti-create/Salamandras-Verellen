@@ -69,7 +69,11 @@ window.CATEGORIAS = [
     "nombre": "Planchetas",
     "linea": "parrilla",
     "texto": "Próximamente.",
-    "proximamente": true
+    "proximamente": true,
+    "fotos": [
+      "assets/extra/plancha-horno-1.jpg",
+      "assets/extra/plancha-horno-2.jpg"
+    ]
   }
 ];
 
@@ -1818,9 +1822,9 @@ window.PRODUCTOS = [
     "m2": 290,
     "m2_origen": "descripcion",
     "fotos": [
+      "assets/productos/sh-v-090/real-3.jpg",
       "assets/productos/sh-v-090/real-1.jpg",
       "assets/productos/sh-v-090/real-2.jpg",
-      "assets/productos/sh-v-090/real-3.jpg",
       "assets/productos/sh-v-090/foto-1.jpg",
       "assets/productos/sh-v-090/foto-2.jpg",
       "assets/productos/sh-v-090/foto-3.jpg",
