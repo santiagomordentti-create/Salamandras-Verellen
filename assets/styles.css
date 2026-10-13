@@ -209,13 +209,14 @@ section{padding-block:clamp(72px,10vw,128px)}
 .insta{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:clamp(32px,5vw,72px);align-items:start}
 @media (max-width:860px){.insta{grid-template-columns:1fr}}
 .insta-txt{display:grid;gap:20px}
-/* Galería de filas fijas: 3 filas de 160px (≈500px) para quedar a la par del texto. La foto grande ocupa 2×2 */
-.galeria{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:160px;gap:12px}
-.galeria .foto:first-child{grid-column:span 2;grid-row:span 2}
-.galeria .foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+/* Galería de filas fijas: 3 filas de 140px (≈444px) para quedar a la par del texto. La foto grande ocupa 2×2 */
+.galeria{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:140px;gap:12px}
+.galeria>:first-child{grid-column:span 2;grid-row:span 2}
+.galeria-foto{overflow:hidden;background:var(--hollin)}
+.galeria-foto img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .4s ease-out}
+.galeria-foto:hover img{transform:scale(1.04)}
+@media (prefers-reduced-motion:reduce){.galeria-foto img{transition:none}}
 @media (max-width:860px){.galeria{grid-auto-rows:120px}}
-/* Etiquetas de los placeholders: en las cajas chicas una palabra larga (REVESTIMIENTO) no entra entera */
-.galeria .foto small{overflow-wrap:anywhere}
 
 /* Historia */
 .historia{display:grid;grid-template-columns:minmax(0,auto) minmax(0,1fr);gap:clamp(24px,5vw,80px);align-items:center}
